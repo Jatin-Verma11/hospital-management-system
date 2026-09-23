@@ -56,19 +56,19 @@
         <span class="text-[11px] text-on-surface-variant uppercase tracking-wider font-semibold">Clinical Services</span>
       </div>
       <nav class="flex flex-col gap-1 px-2">
-        <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" data-path="executive-dashboard" href="/">
+        <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" data-path="executive-dashboard" href="index.html">
           <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="text-sm font-medium">Dashboard</span></div>
         </a>
-        <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" data-path="patients-and-ehr" href="/patients">
+        <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" data-path="patients-and-ehr" href="patients.html">
           <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">personal_injury</span><span class="text-sm font-medium">Patients & EHR</span></div>
         </a>
-        <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" data-path="doctor-and-staff-opd" href="/doctors">
+        <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" data-path="doctor-and-staff-opd" href="doctors.html">
           <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">stethoscope</span><span class="text-sm font-medium">Doctor & OPD</span></div>
         </a>
-        <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" data-path="bed-and-ward-tracker" href="/wards">
+        <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" data-path="bed-and-ward-tracker" href="wards.html">
           <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">bed</span><span class="text-sm font-medium">Ward Tracker</span></div>
         </a>
-        <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" data-path="pharmacy-and-billing" href="/billing">
+        <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" data-path="pharmacy-and-billing" href="billing.html">
           <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">receipt_long</span><span class="text-sm font-medium">Pharmacy & Billing</span></div>
         </a>
       </nav>
@@ -76,10 +76,10 @@
         <span class="text-[11px] text-on-surface-variant uppercase tracking-wider font-semibold">System Administration</span>
       </div>
       <nav class="flex flex-col gap-1 px-2">
-        <a class="flex items-center justify-between px-3 py-2 rounded-lg bg-black text-white font-semibold transition-colors" data-path="database-schema-explorer" href="/schema">
+        <a class="flex items-center justify-between px-3 py-2 rounded-lg bg-black text-white font-semibold transition-colors" data-path="database-schema-explorer" href="schema.html">
           <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">database</span><span class="text-sm font-medium">Database Schema</span></div>
         </a>
-        <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" data-path="audit-logs" href="/sql-console">
+        <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" data-path="audit-logs" href="sql-console.html">
           <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">terminal</span><span class="text-sm font-medium">Live SQL & Audits</span></div>
         </a>
       </nav>
@@ -98,7 +98,7 @@
         <span class="text-sm text-on-surface-variant">• Enforcing Foreign Keys & Triggers</span>
       </div>
       <div class="flex items-center gap-2">
-        <a href="/sql-console" class="px-3 py-1.5 rounded-lg bg-secondary text-white text-xs font-semibold hover:opacity-90 flex items-center gap-1.5 shadow-sm">
+        <a href="sql-console.html" class="px-3 py-1.5 rounded-lg bg-secondary text-white text-xs font-semibold hover:opacity-90 flex items-center gap-1.5 shadow-sm">
           <span class="material-symbols-outlined text-[16px]">terminal</span>
           <span>Open SQL Runner</span>
         </a>
@@ -137,7 +137,8 @@
     </main>
   </div>
 
-  <script src="/js/app.js"></script>
+  <script src="js/db-client.js"></script>
+  <script src="js/app.js"></script>
   <script>
     let schemaData = null;
 
