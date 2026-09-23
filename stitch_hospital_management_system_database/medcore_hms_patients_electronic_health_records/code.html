@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary":"#000000","on-primary-fixed":"#131b2e","outline-variant":"#c6c6cd","error-container":"#ffdad6","surface-tint":"#565e74","surface-container-high":"#dce9ff","inverse-on-surface":"#eaf1ff","inverse-primary":"#bec6e0","surface-container-highest":"#d3e4fe","on-primary-container":"#7c839b","on-secondary-container":"#00476e","inverse-surface":"#213145","primary-fixed":"#dae2fd","secondary-fixed-dim":"#93ccff","on-secondary":"#ffffff","on-tertiary-container":"#0c9488","surface-container":"#e5eeff","on-background":"#0b1c30","error":"#ba1a1a","tertiary-fixed-dim":"#6bd8cb","secondary-fixed":"#cce5ff","background":"#f8f9ff","surface-variant":"#d3e4fe","secondary-container":"#5bb8fe","on-secondary-fixed-variant":"#004b73","surface-dim":"#cbdbf5","tertiary-container":"#00201d","secondary":"#006398","on-tertiary-fixed":"#00201d","on-primary-fixed-variant":"#3f465c","on-surface-variant":"#45464d","on-tertiary-fixed-variant":"#005049","on-surface":"#0b1c30","on-error":"#ffffff","tertiary-fixed":"#89f5e7","on-tertiary":"#ffffff","surface-container-low":"#eff4ff","on-primary":"#ffffff","surface-bright":"#f8f9ff","on-secondary-fixed":"#001d31","tertiary":"#000000","primary-container":"#131b2e","surface":"#f8f9ff","on-error-container":"#93000a","primary-fixed-dim":"#bec6e0","outline":"#76777d","surface-container-lowest":"#ffffff"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"margin":"1rem","space-sm":"0.5rem","space-lg":"1.25rem","margin-desktop":"2rem","gutter-desktop":"1.5rem","gutter":"1rem","space-xs":"0.25rem","space-xl":"2rem","space-md":"0.75rem"},"fontFamily":{"label-lg":["Inter"],"headline-lg":["Inter"],"body-md":["Inter"],"body-lg":["Inter"],"label-md":["Inter"],"headline-md":["Inter"],"label-sm":["Inter"],"data-mono":["Inter"],"headline-xl-mobile":["Inter"],"headline-sm":["Inter"],"headline-xl":["Inter"],"body-sm":["Inter"]},"fontSize":{"label-lg":["14px",{"lineHeight":"20px","fontWeight":"500"}],"headline-lg":["24px",{"lineHeight":"32px","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"500"}],"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","fontWeight":"600"}],"data-mono":["13px",{"lineHeight":"18px","fontWeight":"500"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","fontWeight":"700"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"headline-xl":["36px",{"lineHeight":"44px","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col flex-1 overflow-y-auto"><div class="h-16 px-space-md flex items-center gap-space-sm bg-surface-container-lowest"><img alt="MedCore Hospital Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xod_rEQ6PoN-xRn-UupevmgyW0cyay1dMl2kvp0OibsjFMXEzukh6G55tyoivG-o6-SisuRK0rPIKfsCcWGakDD0WGNw6xe4xSu7DQq-ENv1Ce7k81U5LCILjJ3lChEmF6pz4jzcC3t4fQ2VaqKszlEvn5Ow4Xk4sC5FaDq6TDK5ULl3il75aMwLFPusDdcXuq7ckzRpOhW0HeypXvyXjki_qSF4ySraVJ6kLi8oqfQ69sQA-mPCLZMWc"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-tight">MedCore HMS</span><span class="font-label-sm text-label-sm text-on-surface-variant">Clinical DBMS Portal</span></div></div><div class="px-space-md py-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Clinical Services</span></div><nav class="flex flex-col gap-space-xs px-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="executive-dashboard" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="font-label-lg text-label-lg">Dashboard</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="patients-and-ehr" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">personal_injury</span><span class="font-label-lg text-label-lg">Patients &amp; EHR</span></div><span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-secondary-container font-label-sm text-label-sm">142 Active</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="doctor-and-staff-opd" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">stethoscope</span><span class="font-label-lg text-label-lg">Doctor &amp; OPD</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="bed-and-ward-tracker" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">bed</span><span class="font-label-lg text-label-lg">Ward Tracker</span></div><span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-secondary-container font-label-sm text-label-sm">18 Avail</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="pharmacy-and-billing" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">receipt_long</span><span class="font-label-lg text-label-lg">Pharmacy &amp; Billing</span></div></a></nav><div class="mt-space-md px-space-md py-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">System Administration</span></div><nav class="flex flex-col gap-space-xs px-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="database-schema-explorer" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">database</span><span class="font-label-lg text-label-lg">Database Schema</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="audit-logs" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">history</span><span class="font-label-lg text-label-lg">Audit Logs</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="system-settings" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">settings</span><span class="font-label-lg text-label-lg">Settings</span></div></a></nav></div><div class="p-space-sm bg-surface-container-low"><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">v4.2.0-PG • Host: Primary-01</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm text-secondary">Code Green: Normal</span><span class="font-label-sm text-label-sm text-on-surface-variant">• Cap: 88%</span></div><div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1 rounded-lg"><span class="material-symbols-outlined text-[16px] text-on-surface-variant">domain</span><span class="font-label-sm text-label-sm text-on-surface font-medium">St. Jude - Main</span></div><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-sm text-[16px] text-on-surface-variant">search</span><input class="pl-8 pr-space-md py-1 h-9 w-64 md:w-80 bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm rounded-lg focus:outline-none focus:ring-1 focus:ring-secondary" placeholder="Search Patient ID, Doctor, Bed #... [Ctrl+K]" type="text"/></div></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-space-xs text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-secondary-container animate-ping"></span><span class="font-label-sm text-label-sm">Shift 1 • 08:00 - 20:00</span></div><button class="relative p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-4 h-4 rounded-full bg-secondary text-on-secondary font-label-sm text-[10px] flex items-center justify-center">3</span></button><div class="flex items-center gap-space-sm pl-space-sm"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-md text-label-md text-on-surface font-semibold">Dr. Sarah Jenkins</span><span class="font-label-sm text-label-sm text-on-surface-variant">Chief Medical Registrar</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 px-gutter-desktop min-h-screen bg-surface"><div class="flex flex-col w-full pb-space-xl">
+<!-- Top Command & Filter Deck -->
+<section class="w-full bg-surface-container-lowest p-space-md shadow-sm rounded-xl mb-space-md flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-lg">
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-lg text-headline-lg text-on-surface">Patients &amp; EHR Registry</span>
+<span class="font-data-mono text-data-mono text-secondary px-space-xs py-0.5 rounded-full bg-surface-container font-medium">DBMS v4.2 • Active Node</span>
+</div>
+<div class="flex items-center gap-space-sm pl-space-md hidden md:flex">
+<div class="flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-on-surface font-semibold">1,842</span> Total Registered
+          </div>
+<div class="flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span class="font-semibold text-secondary">142</span> Currently Admitted
+          </div>
+<div class="flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+<span class="font-semibold">6</span> Critical / ICU
+          </div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="h-9 px-space-md rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-space-xs transition-colors" id="exportCsvBtn">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">download</span>
+          Export Record (CSV)
+        </button>
+<button class="h-9 px-space-md rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-lg text-label-lg flex items-center gap-space-xs shadow-sm transition-colors" id="openNewPatientModal">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+          + Register New Patient (MRN)
+        </button>
+</div>
+</div>
+<!-- Parameter Filter Matrix -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-space-sm pt-space-xs">
+<div class="relative flex items-center col-span-1 sm:col-span-2 md:col-span-2">
+<span class="material-symbols-outlined absolute left-space-sm text-[18px] text-on-surface-variant">search</span>
+<input class="w-full h-9 pl-9 pr-space-md bg-surface-container-low text-on-surface placeholder:text-on-surface-variant rounded-lg font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-secondary transition-all" id="patientSearchInput" placeholder="Filter by Name, MRN-2024-XXXX, or National ID..." type="text"/>
+</div>
+<div class="flex items-center bg-surface-container-low rounded-lg px-space-sm h-9">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant mr-1.5">local_hospital</span>
+<select class="w-full bg-transparent text-on-surface font-label-md text-label-md focus:outline-none cursor-pointer">
+<option value="">Ward: All Units (General &amp; ICU)</option>
+<option value="ward-4b">Ward 4B - Cardiology Sub-acute</option>
+<option value="icu-a">ICU-A Critical Intensive Care</option>
+<option value="ward-2c">Ward 2C - Surgical Recovery</option>
+<option value="opd-ped">Pediatric Day Wing</option>
+</select>
+</div>
+<div class="flex items-center bg-surface-container-low rounded-lg px-space-sm h-9">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant mr-1.5">bloodtype</span>
+<select class="w-full bg-transparent text-on-surface font-label-md text-label-md focus:outline-none cursor-pointer">
+<option value="">Blood Group: Any</option>
+<option value="O+">O Rh+ (Positive)</option>
+<option value="A+">A Rh+ (Positive)</option>
+<option value="B+">B Rh+ (Positive)</option>
+<option value="AB+">AB Rh+ (Positive)</option>
+<option value="O-">O Rh- (Negative)</option>
+</select>
+</div>
+<div class="flex items-center bg-surface-container-low rounded-lg px-space-sm h-9">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant mr-1.5">flaky</span>
+<select class="w-full bg-transparent text-on-surface font-label-md text-label-md focus:outline-none cursor-pointer">
+<option value="">Status: Admitted Only</option>
+<option value="all">Status: All Records</option>
+<option value="critical">Critical / Monitored</option>
+<option value="observation">Observation &amp; Triage</option>
+<option value="discharged">Discharged History</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Master-Detail Split Grid Workspace -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter-desktop items-start">
+<!-- LEFT PANEL: Patient Directory Stream (5 Columns on Desktop) -->
+<div class="xl:col-span-5 flex flex-col bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<!-- Filter Segmented Tabs -->
+<div class="flex items-center justify-between p-space-sm bg-surface-container-low">
+<div class="flex items-center gap-space-xs overflow-x-auto">
+<button class="filter-tab px-space-sm py-1 rounded-md bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm font-semibold transition-colors">
+            All (142)
+          </button>
+<button class="filter-tab px-space-sm py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors">
+            Inpatients (118)
+          </button>
+<button class="filter-tab px-space-sm py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors">
+            Critical (6)
+          </button>
+<button class="filter-tab px-space-sm py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors">
+            OPD Scheduled (18)
+          </button>
+</div>
+<span class="font-data-mono text-[11px] text-on-surface-variant pl-space-xs hidden sm:inline">SORT: ADMIT_DESC</span>
+</div>
+<!-- Patient Row Cards List -->
+<div class="flex flex-col max-h-[820px] overflow-y-auto divide-y-0" id="patientListContainer">
+<!-- Active Patient Item: Eleanor Vance (MRN-2024-8842) -->
+<div class="patient-card p-space-md bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors relative" data-patient-id="MRN-2024-8842">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary rounded-r"></div>
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container/30 flex items-center justify-center text-secondary font-headline-sm text-headline-sm">
+                EV
+              </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Eleanor Vance</span>
+<span class="px-1.5 py-0.2 rounded font-label-sm text-[10px] bg-secondary-fixed text-on-secondary-fixed">Cardiology</span>
+</div>
+<div class="flex items-center gap-space-xs font-data-mono text-label-sm text-on-surface-variant">
+<span>MRN-2024-8842</span>
+<span>•</span>
+<span>54y / Female</span>
+<span>•</span>
+<span class="text-secondary font-semibold">O+</span>
+</div>
+</div>
+</div>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-secondary-container font-label-sm text-label-sm">
+              Ward 4B • Bed 12
+            </span>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between bg-surface-container-lowest p-space-xs rounded-lg">
+<div class="flex flex-col">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider">Primary Diagnosis</span>
+<span class="font-body-sm text-body-sm font-medium text-on-surface truncate">Acute Coronary Syndrome (NSTEMI)</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider">Attending MD</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Dr. Robert Chen</span>
+</div>
+</div>
+<div class="mt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-[11px]">
+<span>Admitted: Oct 23, 2024 • 03:14 AM</span>
+<span class="text-secondary flex items-center gap-1 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Telemetry Live</span>
+</div>
+</div>
+<!-- Patient Item 2: Marcus Holloway -->
+<div class="patient-card p-space-md hover:bg-surface-container-low cursor-pointer transition-colors bg-surface-container-lowest" data-patient-id="MRN-2024-8901">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-secondary-container font-headline-sm text-headline-sm">
+                MH
+              </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Marcus Holloway</span>
+<span class="px-1.5 py-0.2 rounded font-label-sm text-[10px] bg-error-container text-on-error-container">Critical Alert</span>
+</div>
+<div class="flex items-center gap-space-xs font-data-mono text-label-sm text-on-surface-variant">
+<span>MRN-2024-8901</span>
+<span>•</span>
+<span>62y / Male</span>
+<span>•</span>
+<span class="text-on-surface font-semibold">A-</span>
+</div>
+</div>
+</div>
+<span class="px-space-xs py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm">
+              ICU-A • Bed 04
+            </span>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between bg-surface-container-low p-space-xs rounded-lg">
+<div class="flex flex-col">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider">Primary Diagnosis</span>
+<span class="font-body-sm text-body-sm font-medium text-on-surface truncate">Acute Respiratory Distress (Sepsis)</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider">Attending MD</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Dr. Sarah Jenkins</span>
+</div>
+</div>
+<div class="mt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-[11px]">
+<span>Admitted: Oct 22, 2024 • 19:40 PM</span>
+<span class="text-error flex items-center gap-1 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>O2 Sat Low</span>
+</div>
+</div>
+<!-- Patient Item 3: Alicia Thorne -->
+<div class="patient-card p-space-md hover:bg-surface-container-low cursor-pointer transition-colors bg-surface-container-lowest" data-patient-id="MRN-2024-8714">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-secondary-container font-headline-sm text-headline-sm">
+                AT
+              </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Alicia Thorne</span>
+<span class="px-1.5 py-0.2 rounded font-label-sm text-[10px] bg-surface-container-high text-on-surface-variant">Post-Op</span>
+</div>
+<div class="flex items-center gap-space-xs font-data-mono text-label-sm text-on-surface-variant">
+<span>MRN-2024-8714</span>
+<span>•</span>
+<span>38y / Female</span>
+<span>•</span>
+<span class="text-on-surface font-semibold">B+</span>
+</div>
+</div>
+</div>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-secondary-container font-label-sm text-label-sm">
+              Ward 2C • Bed 08
+            </span>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between bg-surface-container-low p-space-xs rounded-lg">
+<div class="flex flex-col">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider">Primary Diagnosis</span>
+<span class="font-body-sm text-body-sm font-medium text-on-surface truncate">Post Laparoscopic Appendectomy</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider">Attending MD</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Dr. A. Gupta</span>
+</div>
+</div>
+<div class="mt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-[11px]">
+<span>Admitted: Oct 21, 2024 • 11:20 AM</span>
+<span class="text-secondary font-medium">Stable</span>
+</div>
+</div>
+<!-- Patient Item 4: David K. Vance -->
+<div class="patient-card p-space-md hover:bg-surface-container-low cursor-pointer transition-colors bg-surface-container-lowest" data-patient-id="MRN-2024-8620">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-secondary-container font-headline-sm text-headline-sm">
+                DV
+              </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">David K. Vance</span>
+<span class="px-1.5 py-0.2 rounded font-label-sm text-[10px] bg-surface-container-high text-on-surface-variant">Observation</span>
+</div>
+<div class="flex items-center gap-space-xs font-data-mono text-label-sm text-on-surface-variant">
+<span>MRN-2024-8620</span>
+<span>•</span>
+<span>71y / Male</span>
+<span>•</span>
+<span class="text-on-surface font-semibold">AB+</span>
+</div>
+</div>
+</div>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container text-on-secondary-container font-label-sm text-label-sm">
+              Obs Wing • Bed 03
+            </span>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between bg-surface-container-low p-space-xs rounded-lg">
+<div class="flex flex-col">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider">Primary Diagnosis</span>
+<span class="font-body-sm text-body-sm font-medium text-on-surface truncate">Syncope / Dehydration Evaluation</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider">Attending MD</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Dr. Robert Chen</span>
+</div>
+</div>
+<div class="mt-space-xs flex items-center justify-between text-on-surface-variant font-label-sm text-[11px]">
+<span>Admitted: Oct 23, 2024 • 07:15 AM</span>
+<span class="text-on-surface-variant font-medium">Pending Lab Results</span>
+</div>
+</div>
+</div>
+<!-- Quick Pagination Footer -->
+<div class="p-space-sm bg-surface-container-low flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Showing 1-4 of 142 Active Inpatients</span>
+<div class="flex items-center gap-1">
+<button class="w-7 h-7 flex items-center justify-center rounded bg-surface-container-lowest text-on-surface hover:bg-surface-container font-semibold">&lt;</button>
+<button class="w-7 h-7 flex items-center justify-center rounded bg-primary text-on-primary font-semibold">1</button>
+<button class="w-7 h-7 flex items-center justify-center rounded bg-surface-container-lowest text-on-surface hover:bg-surface-container font-semibold">2</button>
+<button class="w-7 h-7 flex items-center justify-center rounded bg-surface-container-lowest text-on-surface hover:bg-surface-container font-semibold">3</button>
+<button class="w-7 h-7 flex items-center justify-center rounded bg-surface-container-lowest text-on-surface hover:bg-surface-container font-semibold">&gt;</button>
+</div>
+</div>
+</div>
+<!-- RIGHT PANEL: Comprehensive Active EHR Dossier (7 Columns on Desktop) -->
+<div class="xl:col-span-7 flex flex-col gap-space-md">
+<!-- Primary Patient Clinical Header Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col gap-space-md relative overflow-hidden">
+<!-- Top Identity & Bed Location Strip -->
+<div class="flex flex-wrap items-start justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="relative">
+<img class="w-16 h-16 rounded-full object-cover shadow-sm bg-surface-container" data-alt="Close up clinical portrait photo of Eleanor Vance, a 54 year old female patient in a clean modern hospital setting, neutral background, soft diffused medical lighting, high resolution and realistic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu0b5LYM8fn4Is8uZ8OPNVO2RA7if5jpmusEUMRk22_qjpi1YWG0wZ0l0w6jKouEB5-OC4vBwYYN69_uITatZtELlTuZi3VYcUOj9wgqQcfEhz500z7ETF6xeBTT66GGByKbTNA9lpYsjrIVfWNVUe-iCl55l9rIkJ_W8Gh5H3SttJkZLyvLwfAzvmVIHFLLFBtGkvbXhZEOWuPl1al80bKD3uRpw48Cm1kO2BUPXdyXhGQkXHoxi3"/>
+<span class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-secondary flex items-center justify-center text-[10px] text-on-secondary" title="Biometric ID Verified">
+<span class="material-symbols-outlined text-[12px]">verified</span>
+</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">Eleanor Vance</h1>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container text-on-secondary-container font-data-mono text-label-sm font-semibold">
+                  MRN-2024-8842
+                </span>
+<span class="px-space-xs py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-medium">
+                  ADMITTED INPATIENT
+                </span>
+</div>
+<div class="flex flex-wrap items-center gap-y-1 gap-x-space-md mt-1 font-body-sm text-body-sm text-on-surface-variant">
+<span>DOB: <strong>Mar 14, 1970</strong> (54y)</span>
+<span>Sex: <strong>Female</strong></span>
+<span>Blood: <strong class="text-error font-data-mono">O Rh-Positive</strong></span>
+<span>Ward: <strong>4B (Cardio Unit)</strong></span>
+<span>Bed: <strong>412 (Bay 12)</strong></span>
+</div>
+</div>
+</div>
+<!-- Rapid Clinical Action Menu -->
+<div class="flex items-center gap-space-xs">
+<button class="h-8 px-space-sm rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1 transition-colors" title="Print EHR Summary">
+<span class="material-symbols-outlined text-[16px]">print</span>
+              Print
+            </button>
+<button class="h-8 px-space-sm rounded bg-secondary text-on-secondary hover:bg-secondary-container font-label-md text-label-md flex items-center gap-1 shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[16px]">stethoscope</span>
+              Order CPOE
+            </button>
+</div>
+</div>
+<!-- Real-time Physiological Vitals Dashboard Strip -->
+<div class="grid grid-cols-2 sm:grid-cols-5 gap-space-xs p-space-sm bg-surface-container-low rounded-lg">
+<div class="flex flex-col px-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider">Blood Pressure</span>
+<span class="material-symbols-outlined text-[14px] text-secondary">monitor_heart</span>
+</div>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">128/82</span>
+<span class="font-data-mono text-[11px] text-on-surface-variant">mmHg</span>
+</div>
+<span class="font-label-sm text-[10px] text-secondary font-medium">Prehypertensive</span>
+</div>
+<div class="flex flex-col px-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider">Heart Rate</span>
+<span class="material-symbols-outlined text-[14px] text-error">favorite</span>
+</div>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">76</span>
+<span class="font-data-mono text-[11px] text-on-surface-variant">bpm</span>
+</div>
+<span class="font-label-sm text-[10px] text-secondary font-medium">Normal Sinus</span>
+</div>
+<div class="flex flex-col px-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider">SpO2 (Pulse Ox)</span>
+<span class="material-symbols-outlined text-[14px] text-secondary">air</span>
+</div>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">98%</span>
+<span class="font-data-mono text-[11px] text-on-surface-variant">Room Air</span>
+</div>
+<span class="font-label-sm text-[10px] text-secondary font-medium">Optimal Range</span>
+</div>
+<div class="flex flex-col px-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider">Temperature</span>
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">device_thermostat</span>
+</div>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">98.6°</span>
+<span class="font-data-mono text-[11px] text-on-surface-variant">F</span>
+</div>
+<span class="font-label-sm text-[10px] text-secondary font-medium">Normothermic</span>
+</div>
+<div class="flex flex-col px-space-xs col-span-2 sm:col-span-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider">Blood Sugar</span>
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">water_drop</span>
+</div>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">114</span>
+<span class="font-data-mono text-[11px] text-on-surface-variant">mg/dL</span>
+</div>
+<span class="font-label-sm text-[10px] text-secondary font-medium">Post-Prandial</span>
+</div>
+</div>
+<!-- Allergy & Clinical Precautions High-Visibility Alert Banner -->
+<div class="bg-error-container/40 p-space-sm rounded-lg flex items-center justify-between flex-wrap gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-full bg-error text-on-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-label-md text-label-md text-on-error-container font-bold uppercase tracking-wider">Allergies &amp; Alerts:</span>
+<span class="px-2 py-0.5 rounded-full bg-error text-on-error font-label-sm text-[11px] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">block</span> Penicillin (Anaphylaxis)
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-error text-on-error font-label-sm text-[11px] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">block</span> Latex (Contact Dermatitis)
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest text-on-surface font-label-sm text-[11px] font-medium">
+                Fall Risk Protocol (Yellow Band)
+              </span>
+</div>
+</div>
+<button class="font-label-sm text-label-sm text-on-error-container hover:underline font-semibold">+ Add Alert</button>
+</div>
+</div>
+<!-- Tabbed Chart Modules -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Interactive Chart Navigation Tabs -->
+<div class="flex items-center bg-surface-container-low px-space-md pt-space-xs overflow-x-auto gap-space-xs">
+<button class="tab-button px-space-md py-space-sm font-label-md text-label-md border-b-2 border-secondary font-bold text-on-surface flex items-center gap-1.5 transition-colors" id="tabBtnNotes">
+<span class="material-symbols-outlined text-[18px]">clinical_notes</span>
+            Clinical Notes &amp; Diagnoses
+          </button>
+<button class="tab-button px-space-md py-space-sm font-label-md text-label-md border-b-2 border-transparent text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 transition-colors" id="tabBtnMeds">
+<span class="material-symbols-outlined text-[18px]">medication</span>
+            Active Prescriptions (eRx)
+          </button>
+<button class="tab-button px-space-md py-space-sm font-label-md text-label-md border-b-2 border-transparent text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 transition-colors" id="tabBtnLabs">
+<span class="material-symbols-outlined text-[18px]">chips</span>
+            Lab &amp; Diagnostics (ECG)
+          </button>
+<button class="tab-button px-space-md py-space-sm font-label-md text-label-md border-b-2 border-transparent text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 transition-colors" id="tabBtnDbms">
+<span class="material-symbols-outlined text-[18px]">hub</span>
+            DBMS Relational Schema
+          </button>
+</div>
+<!-- TAB CONTENT 1: Clinical Notes & Diagnoses -->
+<div class="tab-pane p-space-lg flex flex-col gap-space-md" id="tabContentNotes">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">assignment</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Physician Progress &amp; Admission Notes</h2>
+</div>
+<span class="font-data-mono text-label-sm text-on-surface-variant">Last Saved: Today, 14:15 EST by Dr. Robert Chen</span>
+</div>
+<!-- Problem List Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-secondary">ICD-10: I21.4</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-label-sm text-[10px] text-on-secondary-container">Active Primary</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Non-ST Elevation Myocardial Infarction</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sub-endocardial infarction identified upon ER triage. Troponin-I trending up initially, stabilized post antithrombotic load.</p>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-secondary">ICD-10: I10</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container font-label-sm text-[10px] text-on-secondary-container">Chronic Comorbidity</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Essential (Primary) Hypertension</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Chronic baseline control via beta blockers. Daily arterial pressure mapping in progress.</p>
+</div>
+</div>
+<!-- SOAP Clinical Note Body -->
+<div class="p-space-md bg-surface-container-low rounded-lg flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-full bg-secondary-container/40 flex items-center justify-center text-secondary font-bold text-xs">RC</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Dr. Robert Chen, MD, FACC</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant">Cardiology Inpatient Attending • License #MED-88192</span>
+</div>
+</div>
+<span class="font-data-mono text-label-sm text-on-surface-variant">Encounter #ENC-90812</span>
+</div>
+<div class="space-y-2 mt-space-xs font-body-md text-body-md text-on-surface">
+<p><strong class="text-secondary font-semibold">Subjective:</strong> Patient reports retrosternal chest pressure subsided to 1/10 following sublingual nitroglycerin and Aspirin load in ER. No nausea or shortness of breath at rest. Denies radiation of pain to left arm or jaw over the past 6 hours.</p>
+<p><strong class="text-secondary font-semibold">Objective:</strong> Heart rate stable at 76 bpm with sinus rhythm. Clear breath sounds bilaterally in lung bases, no peripheral edema. Troponin-I at 0.04 ng/mL (down from 0.12 ng/mL peak). Transthoracic ECG confirms preservation of ejection fraction at 52%.</p>
+<p><strong class="text-secondary font-semibold">Assessment &amp; Plan:</strong> 54yo female with ACS (NSTEMI) post initial stabilization. Maintain dual antiplatelet regimen (DAPT) with Aspirin 81mg and Atorvastatin 40mg. Titrate Metoprolol succinate to target resting HR 60-70 bpm. Schedule diagnostic coronary angiogram for tomorrow morning at 08:30 (OR Suite 3).</p>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-space-xs text-on-surface-variant font-label-sm text-[11px]">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified_user</span>
+                Digitally countersigned via PKI Token #CARDIO-CHEN-01
+              </span>
+<button class="text-secondary font-medium hover:underline">+ Append Attending Addendum</button>
+</div>
+</div>
+</div>
+<!-- TAB CONTENT 2: Prescriptions & Active Medications -->
+<div class="tab-pane hidden p-space-lg flex flex-col gap-space-md" id="tabContentMeds">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Active CPOE Medication Administration Record (eMAR)</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Daily inpatient scheduled dosages and verified clinical logs</span>
+</div>
+<button class="h-8 px-space-md rounded bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">add</span>
+              Order New Drug
+            </button>
+</div>
+<!-- Medications Data Table -->
+<div class="overflow-x-auto rounded-lg shadow-sm">
+<table class="w-full text-left font-body-md text-body-md">
+<thead class="bg-surface-container-low font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
+<tr>
+<th class="py-space-sm px-space-md">Medication &amp; Form</th>
+<th class="py-space-sm px-space-md">Dosage &amp; Route</th>
+<th class="py-space-sm px-space-md">Schedule / Frequency</th>
+<th class="py-space-sm px-space-md">Next Admin</th>
+<th class="py-space-sm px-space-md">Prescribed By</th>
+<th class="py-space-sm px-space-md text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-sm px-space-md">
+<div class="font-semibold text-on-surface">Atorvastatin Calcium</div>
+<span class="font-data-mono text-[11px] text-on-surface-variant">NDC 0071-0155-23 • Statin</span>
+</td>
+<td class="py-space-sm px-space-md text-on-surface">40 mg • Oral (PO)</td>
+<td class="py-space-sm px-space-md text-on-surface">Once Daily (QHS) at Bedtime</td>
+<td class="py-space-sm px-space-md font-data-mono text-on-surface">Today • 21:00</td>
+<td class="py-space-sm px-space-md text-on-surface-variant">Dr. Robert Chen</td>
+<td class="py-space-sm px-space-md text-right">
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container text-on-secondary-container font-label-sm text-label-sm">Active Scheduled</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="py-space-sm px-space-md">
+<div class="font-semibold text-on-surface">Aspirin (Enteric Coated)</div>
+<span class="font-data-mono text-[11px] text-on-surface-variant">NDC 0024-0081-04 • Antiplatelet</span>
+</td>
+<td class="py-space-sm px-space-md text-on-surface">81 mg • Oral (PO)</td>
+<td class="py-space-sm px-space-md text-on-surface">Once Daily (QAM) with food</td>
+<td class="py-space-sm px-space-md font-data-mono text-on-surface">Tomorrow • 08:00</td>
+<td class="py-space-sm px-space-md text-on-surface-variant">Dr. Robert Chen</td>
+<td class="py-space-sm px-space-md text-right">
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container text-on-secondary-container font-label-sm text-label-sm">Active Scheduled</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-sm px-space-md">
+<div class="font-semibold text-on-surface">Metoprolol Tartrate</div>
+<span class="font-data-mono text-[11px] text-on-surface-variant">NDC 0078-0401-05 • Beta-1 Blocker</span>
+</td>
+<td class="py-space-sm px-space-md text-on-surface">25 mg • Oral (PO)</td>
+<td class="py-space-sm px-space-md text-on-surface">Twice Daily (BID) 12hr</td>
+<td class="py-space-sm px-space-md font-data-mono text-secondary font-semibold">Today • 18:00 (Due)</td>
+<td class="py-space-sm px-space-md text-on-surface-variant">Dr. Sarah Jenkins</td>
+<td class="py-space-sm px-space-md text-right">
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container text-on-secondary-container font-label-sm text-label-sm">Active Scheduled</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+<td class="py-space-sm px-space-md">
+<div class="font-semibold text-on-surface">Nitroglycerin Sublingual</div>
+<span class="font-data-mono text-[11px] text-on-surface-variant">NDC 0071-0418-24 • Vasodilator</span>
+</td>
+<td class="py-space-sm px-space-md text-on-surface">0.4 mg • Sublingual</td>
+<td class="py-space-sm px-space-md text-on-surface">PRN Chest Pain q5min (Max 3)</td>
+<td class="py-space-sm px-space-md font-data-mono text-on-surface">As Needed</td>
+<td class="py-space-sm px-space-md text-on-surface-variant">Dr. Robert Chen</td>
+<td class="py-space-sm px-space-md text-right">
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-low text-on-surface font-label-sm text-label-sm">PRN Standby</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- TAB CONTENT 3: Laboratory & Diagnostic Reports -->
+<div class="tab-pane hidden p-space-lg flex flex-col gap-space-md" id="tabContentLabs">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Laboratory Pathology &amp; Diagnostic Attachments</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Specimen collection timestamps verified via LIS barcode scan</span>
+</div>
+<button class="h-8 px-space-sm rounded bg-surface-container-low hover:bg-surface-container font-label-md text-label-md text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+              Sync LIS Gateway
+            </button>
+</div>
+<!-- Quantitative Cardiac Marker Telemetry -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">show_chart</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Troponin-I Serial Biomarker Curve</span>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-lowest font-data-mono text-label-sm text-on-surface">Current: 0.04 ng/mL • Ref: &lt;0.03</span>
+</div>
+<!-- Inline Metric Trend Chart (Troponin series) -->
+<div class="h-28 w-full relative flex items-end">
+<svg class="w-full h-full text-secondary overflow-visible" preserveaspectratio="none" viewbox="0 0 500 80">
+<defs>
+<lineargradient id="tropGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="currentColor" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="currentColor" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<!-- Reference Threshold Line (0.03 ng/mL) -->
+<line opacity="0.6" stroke="#ba1a1a" stroke-dasharray="4,4" stroke-width="1.5" x1="0" x2="500" y1="50" y2="50"></line>
+<!-- Area and Curve -->
+<path d="M 0,65 Q 120,5 250,20 T 500,55 L 500,80 L 0,80 Z" fill="url(#tropGrad)"></path>
+<path d="M 0,65 Q 120,5 250,20 T 500,55" fill="none" stroke="currentColor" stroke-width="3"></path>
+<!-- Key Data Dots -->
+<circle class="fill-surface-container-lowest stroke-secondary" cx="20" cy="65" r="4" stroke-width="2"></circle>
+<circle class="fill-error stroke-error" cx="160" cy="10" r="4" stroke-width="2"></circle>
+<circle class="fill-surface-container-lowest stroke-secondary" cx="330" cy="35" r="4" stroke-width="2"></circle>
+<circle class="fill-surface-container-lowest stroke-secondary" cx="480" cy="55" r="4" stroke-width="2"></circle>
+</svg>
+</div>
+<div class="flex justify-between font-data-mono text-[10px] text-on-surface-variant pt-1">
+<span>03:00 (Admission: 0.02)</span>
+<span class="text-error font-semibold">06:00 (Peak: 0.12 ng/mL)</span>
+<span>11:00 (Post-load: 0.07)</span>
+<span class="text-secondary font-semibold">14:00 (Current: 0.04 ng/mL)</span>
+</div>
+</div>
+<!-- Diagnostic Attachments List -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-surface-container-lowest flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">ecg_heart</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">12-Lead Diagnostic ECG</span>
+<span class="font-data-mono text-[11px] text-on-surface-variant">Acquired: Oct 23, 03:22 AM • PDF (2.4MB)</span>
+</div>
+</div>
+<button class="px-space-sm py-1 rounded bg-surface-container text-on-secondary-container hover:bg-surface-container-high font-label-md text-label-md font-semibold transition-colors">
+                View Report
+              </button>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-surface-container-lowest flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">bloodtype</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Complete Blood Count (CBC)</span>
+<span class="font-data-mono text-[11px] text-on-surface-variant">Validated: Oct 23, 04:10 AM • Automated Sys</span>
+</div>
+</div>
+<button class="px-space-sm py-1 rounded bg-surface-container text-on-secondary-container hover:bg-surface-container-high font-label-md text-label-md font-semibold transition-colors">
+                View Report
+              </button>
+</div>
+</div>
+</div>
+<!-- TAB CONTENT 4: DBMS Relational Schema Explorer Link -->
+<div class="tab-pane hidden p-space-lg flex flex-col gap-space-md" id="tabContentDbms">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">PostgreSQL Relational Entity Integrity Matrix</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Primary &amp; Foreign Key relationships linked to PATIENT_ID #MRN-2024-8842</span>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-secondary-container font-data-mono text-label-sm font-semibold">
+              TRANSACTION ID #TX-8829104
+            </span>
+</div>
+<!-- Relational Foreign Key Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold">Foreign Key FK_01</span>
+<span class="font-data-mono text-body-md font-bold text-secondary">DOCTOR_ID: #104</span>
+<span class="font-body-sm text-body-sm text-on-surface">Table: <code class="bg-surface-container px-1 rounded text-xs">STAFF_PHYSICIANS</code></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Resolved: Dr. Robert Chen (Cardiology Dept)</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold">Foreign Key FK_02</span>
+<span class="font-data-mono text-body-md font-bold text-secondary">BED_ID: #412</span>
+<span class="font-body-sm text-body-sm text-on-surface">Table: <code class="bg-surface-container px-1 rounded text-xs">WARD_BED_ALLOCATION</code></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Resolved: Wing 4B • Telemetry Monitored</span>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-1">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold">Foreign Key FK_03</span>
+<span class="font-data-mono text-body-md font-bold text-secondary">INVOICE_ID: #8902</span>
+<span class="font-body-sm text-body-sm text-on-surface">Table: <code class="bg-surface-container px-1 rounded text-xs">BILLING_LEDGER_MAIN</code></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Resolved: Primary Payer: BlueCross (Verified)</span>
+</div>
+</div>
+<!-- Raw SQL / JSON Preview Block -->
+<div class="p-space-md rounded-lg bg-primary-container text-surface-container-highest flex flex-col gap-space-xs font-data-mono text-data-mono">
+<div class="flex items-center justify-between text-on-primary-container text-label-sm">
+<span>SQL QUERY • PG_DIAGNOSTIC_QUERY_EXEC</span>
+<span>Execution Time: 1.4ms</span>
+</div>
+<div class="overflow-x-auto text-[12px] leading-relaxed">
+<span class="text-secondary-fixed">SELECT</span> p.mrn, p.first_name, p.last_name, a.admission_id, b.bed_number, d.full_name <span class="text-secondary-fixed">FROM</span> patients p<br/>
+<span class="text-secondary-fixed">INNER JOIN</span> admissions a <span class="text-secondary-fixed">ON</span> p.patient_id = a.patient_fk<br/>
+<span class="text-secondary-fixed">INNER JOIN</span> beds b <span class="text-secondary-fixed">ON</span> a.bed_fk = b.bed_id<br/>
+<span class="text-secondary-fixed">INNER JOIN</span> doctors d <span class="text-secondary-fixed">ON</span> a.attending_doctor_fk = d.doctor_id<br/>
+<span class="text-secondary-fixed">WHERE</span> p.mrn = <span class="text-secondary-container">'MRN-2024-8842'</span> <span class="text-secondary-fixed">AND</span> a.status = <span class="text-secondary-container">'ACTIVE'</span>;
+            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Register New Patient (MRN Generator) Modal Dialog -->
+<div class="fixed inset-0 z-50 bg-primary/60 backdrop-blur-sm hidden flex items-center justify-center p-space-md" id="newPatientModal">
+<div class="w-full max-w-2xl bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden flex flex-col max-h-[90vh]">
+<!-- Modal Header -->
+<div class="p-space-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-secondary text-on-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">person_add</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface">Register New Patient Dossier</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Automated MRN Sequence Generator • MedCore HL7 Compliance</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface" id="closeNewPatientModal">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body (Form Fields) -->
+<div class="p-space-lg overflow-y-auto flex flex-col gap-space-md">
+<!-- Generated MRN Preview -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">fingerprint</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Allocated MRN:</span>
+<span class="font-data-mono font-bold text-secondary text-body-md" id="allocatedMrn">MRN-2024-8843</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sequence Validated (PG_SEQ)</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">First Name *</label>
+<input class="h-9 px-space-sm bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-secondary" placeholder="e.g. Julian" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Last Name *</label>
+<input class="h-9 px-space-sm bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-secondary" placeholder="e.g. Sterling" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Date of Birth *</label>
+<input class="h-9 px-space-sm bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-secondary" required="" type="date" value="1982-06-15"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Biological Sex *</label>
+<select class="h-9 px-space-sm bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-secondary">
+<option value="female">Female</option>
+<option value="male">Male</option>
+<option value="other">Other / Undisclosed</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Blood Group *</label>
+<select class="h-9 px-space-sm bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-secondary">
+<option value="O+">O Rh-Positive (O+)</option>
+<option value="A+">A Rh-Positive (A+)</option>
+<option value="B+">B Rh-Positive (B+)</option>
+<option value="AB+">AB Rh-Positive (AB+)</option>
+<option value="O-">O Rh-Negative (O-)</option>
+<option value="A-">A Rh-Negative (A-)</option>
+<option value="B-">B Rh-Negative (B-)</option>
+<option value="AB-">AB Rh-Negative (AB-)</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Admission Triage Ward</label>
+<select class="h-9 px-space-sm bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-secondary">
+<option value="ward-4b">Ward 4B (Cardiology)</option>
+<option value="ward-2c">Ward 2C (Surgical)</option>
+<option value="icu-a">ICU-A (Intensive Care)</option>
+<option value="opd">Outpatient Scheduled</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold">Initial Clinical Presentation / Triage Notes</label>
+<textarea class="p-space-sm bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-secondary" placeholder="Primary complaint, onset, baseline vitals, known allergies (penicillin, latex etc.)..." rows="3"></textarea>
+</div>
+</div>
+<!-- Modal Footer Action Bar -->
+<div class="p-space-md bg-surface-container-low flex items-center justify-between">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md font-semibold transition-colors" id="cancelModalBtn">
+          Cancel
+        </button>
+<button class="px-space-lg py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold flex items-center gap-1.5 transition-colors shadow-sm" id="submitRegisterBtn">
+<span class="material-symbols-outlined text-[18px]">save</span>
+          Commit &amp; Print Wristband
+        </button>
+</div>
+</div>
+</div>
+<!-- Interactive Logic Hook -->
+<script>
+    // Tab switching interaction
+    const tabNotes = document.getElementById('tabBtnNotes');
+    const tabMeds = document.getElementById('tabBtnMeds');
+    const tabLabs = document.getElementById('tabBtnLabs');
+    const tabDbms = document.getElementById('tabBtnDbms');
+
+    const contentNotes = document.getElementById('tabContentNotes');
+    const contentMeds = document.getElementById('tabContentMeds');
+    const contentLabs = document.getElementById('tabContentLabs');
+    const contentDbms = document.getElementById('tabContentDbms');
+
+    const tabs = [
+      { btn: tabNotes, content: contentNotes },
+      { btn: tabMeds, content: contentMeds },
+      { btn: tabLabs, content: contentLabs },
+      { btn: tabDbms, content: contentDbms }
+    ];
+
+    tabs.forEach(tab => {
+      tab.btn.addEventListener('click', () => {
+        tabs.forEach(t => {
+          t.btn.classList.remove('border-secondary', 'font-bold', 'text-on-surface');
+          t.btn.classList.add('border-transparent', 'text-on-surface-variant');
+          t.content.classList.add('hidden');
+        });
+        tab.btn.classList.add('border-secondary', 'font-bold', 'text-on-surface');
+        tab.btn.classList.remove('border-transparent', 'text-on-surface-variant');
+        tab.content.classList.remove('hidden');
+      });
+    });
+
+    // Patient card selection interaction
+    const patientCards = document.querySelectorAll('.patient-card');
+    patientCards.forEach(card => {
+      card.addEventListener('click', () => {
+        patientCards.forEach(c => {
+          c.classList.remove('bg-surface-container-low');
+          c.classList.add('bg-surface-container-lowest');
+          const indicator = c.querySelector('.absolute.left-0');
+          if (indicator) indicator.remove();
+        });
+        card.classList.add('bg-surface-container-low');
+        card.classList.remove('bg-surface-container-lowest');
+
+        const bar = document.createElement('div');
+        bar.className = 'absolute left-0 top-0 bottom-0 w-1 bg-secondary rounded-r';
+        card.appendChild(bar);
+      });
+    });
+
+    // New Patient Registration Modal toggle
+    const modal = document.getElementById('newPatientModal');
+    const openBtn = document.getElementById('openNewPatientModal');
+    const closeBtn = document.getElementById('closeNewPatientModal');
+    const cancelBtn = document.getElementById('cancelModalBtn');
+    const submitBtn = document.getElementById('submitRegisterBtn');
+
+    openBtn.addEventListener('click', () => {
+      modal.classList.remove('hidden');
+    });
+
+    [closeBtn, cancelBtn].forEach(el => {
+      el.addEventListener('click', () => {
+        modal.classList.add('hidden');
+      });
+    });
+
+    submitBtn.addEventListener('click', () => {
+      submitBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span> Committing...';
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        submitBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">save</span> Commit &amp; Print Wristband';
+      }, 700);
+    });
+
+    // Instant filter search hook for quick interactive feedback
+    const searchInput = document.getElementById('patientSearchInput');
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase();
+      patientCards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (text.includes(query)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</div></main></div></body></html>

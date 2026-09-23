@@ -1,0 +1,6 @@
+node_modules/
+server/node_modules/
+client/node_modules/
+.DS_Store
+*.log
+stitch_hospital_management_system_database.zip

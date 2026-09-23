@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: medcore-hms
+    runtime: node
+    plan: free
+    region: oregon
+    rootDir: server
+    buildCommand: npm install
+    startCommand: node db/seed.js && node index.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production

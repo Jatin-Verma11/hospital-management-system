@@ -1,0 +1,19 @@
+{
+  "name": "medcore-hms",
+  "version": "1.0.0",
+  "description": "MedCore Hospital Management System (DBMS) Full-Stack Application",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/db/seed.js && node server/index.js",
+    "prestart": "cd server && npm install",
+    "postinstall": "cd server && npm install"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "sqlite3": "^5.1.7"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

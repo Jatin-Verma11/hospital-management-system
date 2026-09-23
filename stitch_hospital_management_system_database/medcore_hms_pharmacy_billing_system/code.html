@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary":"#000000","on-primary-fixed":"#131b2e","outline-variant":"#c6c6cd","error-container":"#ffdad6","surface-tint":"#565e74","surface-container-high":"#dce9ff","inverse-on-surface":"#eaf1ff","inverse-primary":"#bec6e0","surface-container-highest":"#d3e4fe","on-primary-container":"#7c839b","on-secondary-container":"#00476e","inverse-surface":"#213145","primary-fixed":"#dae2fd","secondary-fixed-dim":"#93ccff","on-secondary":"#ffffff","on-tertiary-container":"#0c9488","surface-container":"#e5eeff","on-background":"#0b1c30","error":"#ba1a1a","tertiary-fixed-dim":"#6bd8cb","secondary-fixed":"#cce5ff","background":"#f8f9ff","surface-variant":"#d3e4fe","secondary-container":"#5bb8fe","on-secondary-fixed-variant":"#004b73","surface-dim":"#cbdbf5","tertiary-container":"#00201d","secondary":"#006398","on-tertiary-fixed":"#00201d","on-primary-fixed-variant":"#3f465c","on-surface-variant":"#45464d","on-tertiary-fixed-variant":"#005049","on-surface":"#0b1c30","on-error":"#ffffff","tertiary-fixed":"#89f5e7","on-tertiary":"#ffffff","surface-container-low":"#eff4ff","on-primary":"#ffffff","surface-bright":"#f8f9ff","on-secondary-fixed":"#001d31","tertiary":"#000000","primary-container":"#131b2e","surface":"#f8f9ff","on-error-container":"#93000a","primary-fixed-dim":"#bec6e0","outline":"#76777d","surface-container-lowest":"#ffffff"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"margin":"1rem","space-sm":"0.5rem","space-lg":"1.25rem","margin-desktop":"2rem","gutter-desktop":"1.5rem","gutter":"1rem","space-xs":"0.25rem","space-xl":"2rem","space-md":"0.75rem"},"fontFamily":{"label-lg":["Inter"],"headline-lg":["Inter"],"body-md":["Inter"],"body-lg":["Inter"],"label-md":["Inter"],"headline-md":["Inter"],"label-sm":["Inter"],"data-mono":["Inter"],"headline-xl-mobile":["Inter"],"headline-sm":["Inter"],"headline-xl":["Inter"],"body-sm":["Inter"]},"fontSize":{"label-lg":["14px",{"lineHeight":"20px","fontWeight":"500"}],"headline-lg":["24px",{"lineHeight":"32px","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"500"}],"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","fontWeight":"600"}],"data-mono":["13px",{"lineHeight":"18px","fontWeight":"500"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","fontWeight":"700"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"headline-xl":["36px",{"lineHeight":"44px","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col flex-1 overflow-y-auto"><div class="h-16 px-space-md flex items-center gap-space-sm bg-surface-container-lowest"><img alt="MedCore Hospital Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xod_rEQ6PoN-xRn-UupevmgyW0cyay1dMl2kvp0OibsjFMXEzukh6G55tyoivG-o6-SisuRK0rPIKfsCcWGakDD0WGNw6xe4xSu7DQq-ENv1Ce7k81U5LCILjJ3lChEmF6pz4jzcC3t4fQ2VaqKszlEvn5Ow4Xk4sC5FaDq6TDK5ULl3il75aMwLFPusDdcXuq7ckzRpOhW0HeypXvyXjki_qSF4ySraVJ6kLi8oqfQ69sQA-mPCLZMWc"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-tight">MedCore HMS</span><span class="font-label-sm text-label-sm text-on-surface-variant">Clinical DBMS Portal</span></div></div><div class="px-space-md py-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Clinical Services</span></div><nav class="flex flex-col gap-space-xs px-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="executive-dashboard" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="font-label-lg text-label-lg">Dashboard</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="patients-and-ehr" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">personal_injury</span><span class="font-label-lg text-label-lg">Patients &amp; EHR</span></div><span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-secondary-container font-label-sm text-label-sm">142 Active</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="doctor-and-staff-opd" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">stethoscope</span><span class="font-label-lg text-label-lg">Doctor &amp; OPD</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="bed-and-ward-tracker" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">bed</span><span class="font-label-lg text-label-lg">Ward Tracker</span></div><span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-secondary-container font-label-sm text-label-sm">18 Avail</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="pharmacy-and-billing" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">receipt_long</span><span class="font-label-lg text-label-lg">Pharmacy &amp; Billing</span></div></a></nav><div class="mt-space-md px-space-md py-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">System Administration</span></div><nav class="flex flex-col gap-space-xs px-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="database-schema-explorer" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">database</span><span class="font-label-lg text-label-lg">Database Schema</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="audit-logs" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">history</span><span class="font-label-lg text-label-lg">Audit Logs</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="system-settings" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">settings</span><span class="font-label-lg text-label-lg">Settings</span></div></a></nav></div><div class="p-space-sm bg-surface-container-low"><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">v4.2.0-PG • Host: Primary-01</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm text-secondary">Code Green: Normal</span><span class="font-label-sm text-label-sm text-on-surface-variant">• Cap: 88%</span></div><div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1 rounded-lg"><span class="material-symbols-outlined text-[16px] text-on-surface-variant">domain</span><span class="font-label-sm text-label-sm text-on-surface font-medium">St. Jude - Main</span></div><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-sm text-[16px] text-on-surface-variant">search</span><input class="pl-8 pr-space-md py-1 h-9 w-64 md:w-80 bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm rounded-lg focus:outline-none focus:ring-1 focus:ring-secondary" placeholder="Search Patient ID, Doctor, Bed #... [Ctrl+K]" type="text"/></div></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-space-xs text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-secondary-container animate-ping"></span><span class="font-label-sm text-label-sm">Shift 1 • 08:00 - 20:00</span></div><button class="relative p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-4 h-4 rounded-full bg-secondary text-on-secondary font-label-sm text-[10px] flex items-center justify-center">3</span></button><div class="flex items-center gap-space-sm pl-space-sm"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-md text-label-md text-on-surface font-semibold">Dr. Sarah Jenkins</span><span class="font-label-sm text-label-sm text-on-surface-variant">Chief Medical Registrar</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 px-gutter-desktop min-h-screen bg-surface"><div class="flex flex-col w-full pb-space-xl">
+<!-- Operational Sub-Header & Live DB Sync Status -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md py-space-md mb-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface tracking-tight">Pharmacy &amp; Financial Ledger</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-secondary font-data-mono text-label-sm uppercase tracking-wide">RX-BILL-NODE-04</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Real-time dispensary queue, batch tracking, CDS alerts, and itemized patient billing synchronization.</p>
+</div>
+<!-- Quick Actions & Global Switch -->
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg">
+<button class="px-space-md py-1 rounded font-label-md text-label-md bg-primary text-on-primary shadow-sm transition-all flex items-center gap-1.5" id="viewTabRx" onclick="switchMainTab('dispensary')">
+<span class="material-symbols-outlined text-[16px]">medication</span>
+<span>Pharmacy &amp; Formulary</span>
+</button>
+<button class="px-space-md py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-1.5" id="viewTabBill" onclick="switchMainTab('billing')">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+<span>Patient Invoicing (IPD/OPD)</span>
+</button>
+</div>
+<button class="h-9 px-space-md bg-surface-container-lowest text-on-surface hover:bg-surface-container-high rounded-lg shadow-sm flex items-center gap-1.5 font-label-md text-label-md transition-colors" onclick="simulateDbSync()">
+<span class="material-symbols-outlined text-[16px] text-secondary" id="syncIcon">sync</span>
+<span>Sync Ledger</span>
+</button>
+<button class="h-9 px-space-md bg-primary text-on-primary hover:bg-primary-container rounded-lg shadow-sm flex items-center gap-1.5 font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-[16px]">add_box</span>
+<span>New Rx Order</span>
+</button>
+</div>
+</div>
+<!-- Key Clinical & Fiscal KPI Ribbon -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-lg">
+<!-- Metric 1: Revenue -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Daily Revenue Billed</span>
+<span class="p-1 rounded bg-surface-container-high text-secondary">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</span>
+</div>
+<div class="flex items-baseline gap-space-xs mb-1">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight">$148,250.00</span>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold">+12.4% vs yday</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm pt-space-xs bg-surface-container-low/50 px-2 py-1 rounded">
+<span class="text-on-surface-variant">Settled / Collected:</span>
+<span class="text-on-surface font-semibold font-data-mono">$112,800.00 (76.1%)</span>
+</div>
+</div>
+<!-- Metric 2: Pending Claims -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Pending Claims Queue</span>
+<span class="p-1 rounded bg-surface-container-high text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]">account_balance</span>
+</span>
+</div>
+<div class="flex items-baseline gap-space-xs mb-1">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight">$86,400.00</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-high text-on-secondary-container font-medium">34 Claims</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm pt-space-xs bg-surface-container-low/50 px-2 py-1 rounded">
+<span class="text-on-surface-variant">Avg Adjudication:</span>
+<span class="text-on-surface font-semibold font-data-mono">4.2 hrs (Auto-cleared: 22)</span>
+</div>
+</div>
+<!-- Metric 3: Low-stock Medications Alert -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Critical Low-Stock Formulary</span>
+<span class="p-1 rounded bg-error-container text-error">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</span>
+</div>
+<div class="flex items-baseline gap-space-xs mb-1">
+<span class="font-headline-lg text-headline-lg text-error tracking-tight">6 Molecules</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-semibold">Immediate Action</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm pt-space-xs bg-surface-container-low/50 px-2 py-1 rounded">
+<span class="text-on-surface-variant">Stockouts Prevented:</span>
+<span class="text-on-surface font-semibold font-data-mono">3 Auto-PO Dispatched</span>
+</div>
+</div>
+<!-- Metric 4: Dispensing Queue -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Active Rx Dispensing Queue</span>
+<span class="p-1 rounded bg-surface-container-high text-secondary">
+<span class="material-symbols-outlined text-[18px]">hourglass_top</span>
+</span>
+</div>
+<div class="flex items-baseline gap-space-xs mb-1">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight">28 Orders</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">8 Stat / ICU</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm pt-space-xs bg-surface-container-low/50 px-2 py-1 rounded">
+<span class="text-on-surface-variant">Avg Turnaround:</span>
+<span class="text-on-surface font-semibold font-data-mono">11 mins (Target: &lt;15)</span>
+</div>
+</div>
+</div>
+<!-- MAIN WORKSPACE SECTION (Tab Controlled) -->
+<div class="w-full space-y-space-lg">
+<!-- TAB 1: PHARMACY DISPENSING & INVENTORY -->
+<section class="block w-full" id="sectionPharmacy">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md">
+<!-- Filter Bar & Search Sub-controls -->
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md pb-space-md mb-space-md bg-surface-container-low/40 p-space-sm rounded-lg">
+<!-- Therapeutic Class Filters -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mr-1">Therapeutic Class:</span>
+<button class="rx-filter-btn px-2.5 py-1 rounded text-label-sm font-label-sm bg-primary text-on-primary" onclick="filterFormulary('ALL', this)">All (142)</button>
+<button class="rx-filter-btn px-2.5 py-1 rounded text-label-sm font-label-sm bg-surface-container-high text-on-surface hover:bg-surface-container-highest" onclick="filterFormulary('ANTIBIOTIC', this)">Antibiotics (31)</button>
+<button class="rx-filter-btn px-2.5 py-1 rounded text-label-sm font-label-sm bg-surface-container-high text-on-surface hover:bg-surface-container-highest" onclick="filterFormulary('CARDIAC', this)">Cardiac (24)</button>
+<button class="rx-filter-btn px-2.5 py-1 rounded text-label-sm font-label-sm bg-surface-container-high text-on-surface hover:bg-surface-container-highest" onclick="filterFormulary('ANALGESIC', this)">Analgesics (19)</button>
+<button class="rx-filter-btn px-2.5 py-1 rounded text-label-sm font-label-sm bg-surface-container-high text-on-surface hover:bg-surface-container-highest" onclick="filterFormulary('IV_FLUID', this)">IV Fluids (45)</button>
+<button class="rx-filter-btn px-2.5 py-1 rounded text-label-sm font-label-sm bg-surface-container-high text-on-surface hover:bg-surface-container-highest flex items-center gap-1" onclick="filterFormulary('CONTROLLED', this)">
+<span class="material-symbols-outlined text-[12px] text-error">lock</span>
+<span>Controlled (12)</span>
+</button>
+</div>
+<!-- Secondary Filter controls -->
+<div class="flex items-center gap-space-sm w-full lg:w-auto justify-end">
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined absolute left-2 top-2 text-[18px] text-on-surface-variant">filter_alt</span>
+<input class="w-full h-8 pl-8 pr-3 text-body-sm font-body-sm bg-surface rounded focus:outline-none focus:ring-1 focus:ring-secondary text-on-surface placeholder:text-on-surface-variant" id="rxSearchInput" oninput="searchRxQueue()" placeholder="Filter patient MRN or drug..." type="text"/>
+</div>
+<button class="h-8 px-space-sm bg-surface-container text-on-surface rounded text-label-sm font-label-sm flex items-center gap-1 hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+<span>Presets</span>
+</button>
+</div>
+</div>
+<!-- Dispensing Queue & Formulary Master Table -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm h-9">
+<th class="px-space-md py-1 font-medium">Rx ID / Priority</th>
+<th class="px-space-md py-1 font-medium">Patient Details &amp; MRN</th>
+<th class="px-space-md py-1 font-medium">Prescribed Drug &amp; Dosage</th>
+<th class="px-space-md py-1 font-medium">Attending Physician</th>
+<th class="px-space-md py-1 font-medium">Batch # &amp; Expiry</th>
+<th class="px-space-md py-1 font-medium text-right">Available Stock</th>
+<th class="px-space-md py-1 font-medium text-center">Status</th>
+<th class="px-space-md py-1 font-medium text-right">Fulfillment</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md divide-y divide-surface-container-low" id="dispensaryTableBody">
+<!-- Item 1: STAT Antibiotic -->
+<tr class="hover:bg-surface-container-low/60 transition-colors" data-category="ANTIBIOTIC">
+<td class="px-space-md py-2.5">
+<div class="flex flex-col">
+<span class="font-data-mono font-semibold text-on-surface">RX-99418</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-[10px] text-error font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> STAT / ICU-B2
+                    </span>
+</div>
+</td>
+<td class="px-space-md py-2.5">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Eleanor Vance</span>
+<span class="font-data-mono text-label-sm text-on-surface-variant">MRN-880291 • Ward 4C</span>
+</div>
+</td>
+<td class="px-space-md py-2.5">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[16px]">vaccines</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Ceftriaxone 1g IV Infusion</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">q12h with 100mL 0.9% NaCl</span>
+</div>
+</div>
+</td>
+<td class="px-space-md py-2.5">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface">Dr. Robert Chen</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Infectious Diseases</span>
+</div>
+</td>
+<td class="px-space-md py-2.5">
+<div class="flex flex-col">
+<span class="font-data-mono text-label-sm text-on-surface">LOT-CEF24-B1</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Exp: 11/2026</span>
+</div>
+</td>
+<td class="px-space-md py-2.5 text-right">
+<div class="flex flex-col items-end">
+<span class="font-data-mono font-semibold text-on-surface">142 Vials</span>
+<span class="text-[10px] font-label-sm text-on-tertiary-container">Bin: PH-A04</span>
+</div>
+</td>
+<td class="px-space-md py-2.5 text-center">
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-surface-container-high text-on-secondary-container">
+                    Ready for Pickup
+                  </span>
+</td>
+<td class="px-space-md py-2.5 text-right">
+<button class="h-8 px-space-sm bg-primary hover:bg-primary-container text-on-primary rounded font-label-md text-label-md transition-colors inline-flex items-center gap-1 shadow-sm" onclick="markFulfilled(this, 'RX-99418', 42.50)">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span>Fulfill &amp; Bill</span>
+</button>
+</td>
+</tr>
+<!-- Item 2: Cardiac & Anticoagulant - Stock Warning -->
+<tr class="hover:bg-surface-container-low/60 transition-colors" data-category="CARDIAC">
+<td class="px-space-md py-2.5">
+<div class="flex flex-col">
+<span class="font-data-mono font-semibold text-on-surface">RX-99412</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-[10px] text-secondary font-semibold">
+                      Urgent / Step-down
+                    </span>
+</div>
+</td>
+<td class="px-space-md py-2.5">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Marcus Holloway</span>
+<span class="font-data-mono text-label-sm text-on-surface-variant">MRN-773419 • Bed 301</span>
+</div>
+</td>
+<td class="px-space-md py-2.5">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[16px]">syringe</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Enoxaparin Sodium 40mg/0.4mL</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Subcutaneous injection q24h</span>
+</div>
+</div>
+</td>
+<td class="px-space-md py-2.5">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface">Dr. Sarah Jenkins</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Cardiology Sub-dept</span>
+</div>
+</td>
+<td class="px-space-md py-2.5">
+<div class="flex flex-col">
+<span class="font-data-mono text-label-sm text-on-surface">LOT-ENO-992</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Exp: 04/2025</span>
+</div>
+</td>
+<td class="px-space-md py-2.5 text-right">
+<div class="flex flex-col items-end">
+<span class="font-data-mono font-semibold text-error">4 Syringes</span>
+<span class="text-[10px] font-label-sm text-error font-medium">Reorder Alert &lt;10</span>
+</div>
+</td>
+<td class="px-space-md py-2.5 text-center">
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-error-container text-on-error-container font-semibold">
+                    Stock Alert
+                  </span>
+</td>
+<td class="px-space-md py-2.5 text-right">
+<button class="h-8 px-space-sm bg-primary hover:bg-primary-container text-on-primary rounded font-label-md text-label-md transition-colors inline-flex items-center gap-1 shadow-sm" onclick="markFulfilled(this, 'RX-99412', 68.00)">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span>Fulfill &amp; Bill</span>
+</button>
+</td>
+</tr>
+<!-- Item 3: Analgesic / Controlled Substance -->
+<tr class="hover:bg-surface-container-low/60 transition-colors" data-category="CONTROLLED">
+<td class="px-space-md py-2.5">
+<div class="flex flex-col">
+<span class="font-data-mono font-semibold text-on-surface">RX-99395</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-[10px] text-on-surface-variant">
+                      Post-Op PACU
+                    </span>
+</div>
+</td>
+<td class="px-space-md py-2.5">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Amina Diallo</span>
+<span class="font-data-mono text-label-sm text-on-surface-variant">MRN-904128 • PACU-04</span>
+</div>
+</td>
+<td class="px-space-md py-2.5">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded bg-error-container/30 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Morphine Sulfate 4mg IV</span>
+<span class="px-1 py-0.2 rounded bg-error text-on-error text-[9px] font-bold">C-II</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">PRN Severe Breakthrough Pain</span>
+</div>
+</div>
+</td>
+<td class="px-space-md py-2.5">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface">Dr. Andrew Walsh</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Anesthesiology</span>
+</div>
+</td>
+<td class="px-space-md py-2.5">
+<div class="flex flex-col">
+<span class="font-data-mono text-label-sm text-on-surface">LOT-MOR-038</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Exp: 08/2026</span>
+</div>
+</td>
+<td class="px-space-md py-2.5 text-right">
+<div class="flex flex-col items-end">
+<span class="font-data-mono font-semibold text-on-surface">48 Ampoules</span>
+<span class="text-[10px] font-label-sm text-on-surface-variant">Vault: SV-02</span>
+</div>
+</td>
+<td class="px-space-md py-2.5 text-center">
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-surface-container text-on-surface">
+                    Dispensed (Nurse Ack)
+                  </span>
+</td>
+<td class="px-space-md py-2.5 text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant px-space-xs py-1 italic">Billed to Ledger</span>
+</td>
+</tr>
+<!-- Item 4: IV Fluids High-Volume -->
+<tr class="hover:bg-surface-container-low/60 transition-colors" data-category="IV_FLUID">
+<td class="px-space-md py-2.5">
+<div class="flex flex-col">
+<span class="font-data-mono font-semibold text-on-surface">RX-99380</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-[10px] text-on-surface-variant">
+                      Routine / Ward 2
+                    </span>
+</div>
+</td>
+<td class="px-space-md py-2.5">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">David Zimmerman</span>
+<span class="font-data-mono text-label-sm text-on-surface-variant">MRN-554109 • Bed 214</span>
+</div>
+</td>
+<td class="px-space-md py-2.5">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[16px]">water_drop</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">0.9% Sodium Chloride 1000mL</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Continuous Infusion @ 125 mL/hr</span>
+</div>
+</div>
+</td>
+<td class="px-space-md py-2.5">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface">Dr. Lisa Morgan</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">General Internal Med</span>
+</div>
+</td>
+<td class="px-space-md py-2.5">
+<div class="flex flex-col">
+<span class="font-data-mono text-label-sm text-on-surface">LOT-SAL-778</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Exp: 01/2027</span>
+</div>
+</td>
+<td class="px-space-md py-2.5 text-right">
+<div class="flex flex-col items-end">
+<span class="font-data-mono font-semibold text-on-surface">320 Bags</span>
+<span class="text-[10px] font-label-sm text-on-tertiary-container">Bay: IV-Bulk-1</span>
+</div>
+</td>
+<td class="px-space-md py-2.5 text-center">
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-surface-container-high text-on-secondary-container">
+                    Ready for Pickup
+                  </span>
+</td>
+<td class="px-space-md py-2.5 text-right">
+<button class="h-8 px-space-sm bg-primary hover:bg-primary-container text-on-primary rounded font-label-md text-label-md transition-colors inline-flex items-center gap-1 shadow-sm" onclick="markFulfilled(this, 'RX-99380', 21.00)">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span>Fulfill &amp; Bill</span>
+</button>
+</td>
+</tr>
+<!-- Item 5: Cardiac Oral Formulation -->
+<tr class="hover:bg-surface-container-low/60 transition-colors" data-category="CARDIAC">
+<td class="px-space-md py-2.5">
+<div class="flex flex-col">
+<span class="font-data-mono font-semibold text-on-surface">RX-99371</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-[10px] text-on-surface-variant">
+                      Discharge Meds
+                    </span>
+</div>
+</td>
+<td class="px-space-md py-2.5">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Teresa Navarro</span>
+<span class="font-data-mono text-label-sm text-on-surface-variant">MRN-642190 • OPD Clinic 3</span>
+</div>
+</td>
+<td class="px-space-md py-2.5">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[16px]">pill</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Atorvastatin Calcium 40mg Tab</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Oral 1 tab PO qHS #30 days</span>
+</div>
+</div>
+</td>
+<td class="px-space-md py-2.5">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface">Dr. Sarah Jenkins</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Cardiology</span>
+</div>
+</td>
+<td class="px-space-md py-2.5">
+<div class="flex flex-col">
+<span class="font-data-mono text-label-sm text-on-surface">LOT-ATO-102</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Exp: 09/2026</span>
+</div>
+</td>
+<td class="px-space-md py-2.5 text-right">
+<div class="flex flex-col items-end">
+<span class="font-data-mono font-semibold text-on-surface">580 Tabs</span>
+<span class="text-[10px] font-label-sm text-on-tertiary-container">Bin: PH-C12</span>
+</div>
+</td>
+<td class="px-space-md py-2.5 text-center">
+<span class="px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-surface-container-high text-on-secondary-container">
+                    Ready for Pickup
+                  </span>
+</td>
+<td class="px-space-md py-2.5 text-right">
+<button class="h-8 px-space-sm bg-primary hover:bg-primary-container text-on-primary rounded font-label-md text-label-md transition-colors inline-flex items-center gap-1 shadow-sm" onclick="markFulfilled(this, 'RX-99371', 34.20)">
+<span class="material-symbols-outlined text-[14px]">check</span>
+<span>Fulfill &amp; Bill</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Formulary Bottom Bar -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm pt-space-md mt-space-sm text-label-sm font-label-sm text-on-surface-variant">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Automated Dispensing Cabinet (ADC) Pyxis Network Online</span>
+<span class="text-on-surface font-mono">• Ping: 14ms</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span>Showing 5 of 28 Queue Items</span>
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface">Previous</button>
+<button class="px-2 py-1 rounded bg-primary text-on-primary">Next 10</button>
+</div>
+</div>
+</div>
+</section>
+<!-- TAB 2: INPATIENT & OPD BILLING / DISCHARGE INVOICE PANEL -->
+<section class="block w-full" id="sectionBilling">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left 8 Cols: Itemized Admitted Patient Invoicing Preview -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col justify-between">
+<div>
+<!-- Invoice Top Header Details -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md mb-space-md bg-surface-container-low/50 p-space-md rounded-lg gap-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary font-headline-md">
+<span class="material-symbols-outlined text-[28px]">local_hospital</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface">Admitted Inpatient Billing Ledger</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-secondary-container font-label-sm text-label-sm">Discharge Pending</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Encounter Ref: <strong class="font-data-mono text-on-surface">ENC-2024-8849</strong> • Admit: Oct 21, 2024</span>
+</div>
+</div>
+<!-- Quick Patient Selector Switch -->
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Select Account:</span>
+<select class="h-8 px-2 bg-surface rounded text-label-sm font-label-sm text-on-surface focus:outline-none" onchange="reloadInvoiceData(this.value)">
+<option value="p1">Arthur Pendelton (ICU-03)</option>
+<option value="p2">Eleanor Vance (Ward 4C)</option>
+<option value="p3">Carlos Mendez (OR-Daycare)</option>
+</select>
+</div>
+</div>
+<!-- Patient Demographic & Insurance Card Snapshot -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md mb-space-lg bg-surface-container-lowest p-space-sm rounded-lg shadow-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Patient Profile</span>
+<span class="font-label-lg text-label-lg font-semibold text-on-surface" id="invPatientName">Arthur Pendelton (62 M)</span>
+<span class="font-data-mono text-body-sm text-on-surface-variant" id="invPatientMRN">MRN-449102 • Blood: A+</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Treating Physician</span>
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">Dr. Sarah Jenkins</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Chief Medical Registrar • Cardiology</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Payer / Insurance Scheme</span>
+<div class="flex items-center gap-1 text-on-tertiary-container font-semibold font-label-md">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span id="invInsuranceName">BlueCross Gold Tier A</span>
+</div>
+<span class="font-data-mono text-body-sm text-on-surface-variant">Policy: #BC-992-80-PCT</span>
+</div>
+</div>
+<!-- Itemized Clinical Breakdown Table -->
+<div class="overflow-x-auto mb-space-md">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm h-8">
+<th class="px-space-md py-1 font-medium">Service Code &amp; Description</th>
+<th class="px-space-md py-1 font-medium text-center">Units / Days</th>
+<th class="px-space-md py-1 font-medium text-right">Standard Rate</th>
+<th class="px-space-md py-1 font-medium text-right">Subtotal</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md divide-y divide-surface-container-low">
+<!-- Row 1: Bed Charges -->
+<tr class="hover:bg-surface-container-low/40">
+<td class="px-space-md py-2">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface font-label-md">Room &amp; Bed Charges (Cardiovascular ICU)</span>
+<span class="font-data-mono text-body-sm text-on-surface-variant">CPT-0110 • Continuous Hemodynamic Monitoring</span>
+</div>
+</td>
+<td class="px-space-md py-2 text-center font-data-mono">4 Days</td>
+<td class="px-space-md py-2 text-right font-data-mono text-on-surface-variant">$1,200.00</td>
+<td class="px-space-md py-2 text-right font-data-mono font-semibold text-on-surface">$4,800.00</td>
+</tr>
+<!-- Row 2: Surgery Fee -->
+<tr class="hover:bg-surface-container-low/40">
+<td class="px-space-md py-2">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface font-label-md">Surgical Intervention &amp; Theater Fee</span>
+<span class="font-data-mono text-body-sm text-on-surface-variant">CPT-33533 • Percutaneous Coronary Angioplasty + Stenting</span>
+</div>
+</td>
+<td class="px-space-md py-2 text-center font-data-mono">1 Proc</td>
+<td class="px-space-md py-2 text-right font-data-mono text-on-surface-variant">$4,500.00</td>
+<td class="px-space-md py-2 text-right font-data-mono font-semibold text-on-surface">$4,500.00</td>
+</tr>
+<!-- Row 3: Pharmacy & Meds -->
+<tr class="hover:bg-surface-container-low/40">
+<td class="px-space-md py-2">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface font-label-md">Pharmacy &amp; Inpatient Medications</span>
+<span class="font-data-mono text-body-sm text-on-surface-variant">Ceftriaxone, Heparin Lock, Enoxaparin, Analgesics (14 line items)</span>
+</div>
+</td>
+<td class="px-space-md py-2 text-center font-data-mono">Bulk</td>
+<td class="px-space-md py-2 text-right font-data-mono text-on-surface-variant">$840.00</td>
+<td class="px-space-md py-2 text-right font-data-mono font-semibold text-on-surface">$840.00</td>
+</tr>
+<!-- Row 4: Pathology & Diagnostics -->
+<tr class="hover:bg-surface-container-low/40">
+<td class="px-space-md py-2">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface font-label-md">Pathology &amp; Radiology Lab Diagnostics</span>
+<span class="font-data-mono text-body-sm text-on-surface-variant">Trop-I High Sensitivity, Serial CBC, Coagulation Panel, Echo-Doppler</span>
+</div>
+</td>
+<td class="px-space-md py-2 text-center font-data-mono">5 Tests</td>
+<td class="px-space-md py-2 text-right font-data-mono text-on-surface-variant">$620.00</td>
+<td class="px-space-md py-2 text-right font-data-mono font-semibold text-on-surface">$620.00</td>
+</tr>
+<!-- Row 5: Nursing & Consumables -->
+<tr class="hover:bg-surface-container-low/40">
+<td class="px-space-md py-2">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface font-label-md">Specialized Nursing &amp; Surgical Consumables</span>
+<span class="font-data-mono text-body-sm text-on-surface-variant">Catheterization packs, sterile surgical drapes, infusion sets</span>
+</div>
+</td>
+<td class="px-space-md py-2 text-center font-data-mono">1 Kit</td>
+<td class="px-space-md py-2 text-right font-data-mono text-on-surface-variant">$350.00</td>
+<td class="px-space-md py-2 text-right font-data-mono font-semibold text-on-surface">$350.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Discharge & Clinical Verification Notice -->
+<div class="mt-space-md p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary">verified</span>
+<span>All 5 department heads approved clearance. MedCore DBMS digital signature verified.</span>
+</div>
+<span class="font-data-mono">Hash: #a98f7e21</span>
+</div>
+</div>
+<!-- Right 4 Cols: Adjudication, Copay & Payment Gate -->
+<div class="lg:col-span-4 bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<span class="font-headline-sm text-headline-sm text-on-surface">Payment Adjudication</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary font-label-sm text-label-sm font-semibold">Live Realtime</span>
+</div>
+<!-- Calculation Stack -->
+<div class="space-y-space-xs bg-surface-container-low/50 p-space-md rounded-lg mb-space-md">
+<div class="flex items-center justify-between font-body-md text-body-md">
+<span class="text-on-surface-variant">Gross Clinical Subtotal</span>
+<span class="font-data-mono font-semibold text-on-surface">$11,110.00</span>
+</div>
+<div class="flex items-center justify-between font-body-md text-body-md">
+<span class="text-on-surface-variant">State Healthcare Surcharge (4.5%)</span>
+<span class="font-data-mono text-on-surface">$499.95</span>
+</div>
+<div class="flex items-center justify-between font-body-md text-body-md pb-space-xs">
+<span class="text-on-surface-variant">MedCore Pharmacy Subsidy</span>
+<span class="font-data-mono text-on-tertiary-container font-medium">-$120.00</span>
+</div>
+<div class="pt-space-xs flex items-center justify-between font-headline-sm text-headline-sm">
+<span class="text-on-surface">Total Charge</span>
+<span class="font-data-mono text-on-surface" id="grossTotal">$11,489.95</span>
+</div>
+</div>
+<!-- Insurance Adjudication Math Box -->
+<div class="p-space-md rounded-lg bg-surface-container-high/40 mb-space-md space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">health_and_safety</span>
+<span>BlueCross Adjudicated</span>
+</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest font-label-sm text-label-sm text-on-secondary-container">80% Approved</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Primary insurer electronic remittance notice received. Covered amount: $9,191.96</p>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Direct Insurer Payment:</span>
+<span class="font-data-mono font-semibold text-on-secondary-container">$9,191.96</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">Patient Co-Pay Due:</span>
+<span class="font-data-mono text-headline-md text-headline-md font-bold text-on-surface" id="patientCoPay">$2,297.99</span>
+</div>
+</div>
+<!-- Payment Method Selector -->
+<div class="mb-space-md">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-space-xs">Payment Settlement Method</label>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="pay-method-btn flex items-center gap-2 p-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md transition-all" onclick="selectPayMethod(this, 'CARD')" type="button">
+<span class="material-symbols-outlined text-[18px]">credit_card</span>
+<span>Credit Card</span>
+</button>
+<button class="pay-method-btn flex items-center gap-2 p-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md transition-all hover:bg-surface-container-high" onclick="selectPayMethod(this, 'WIRE')" type="button">
+<span class="material-symbols-outlined text-[18px]">account_balance</span>
+<span>Bank Wire</span>
+</button>
+<button class="pay-method-btn flex items-center gap-2 p-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md transition-all hover:bg-surface-container-high" onclick="selectPayMethod(this, 'DIRECT')" type="button">
+<span class="material-symbols-outlined text-[18px]">domain_verification</span>
+<span>Insurance Direct</span>
+</button>
+<button class="pay-method-btn flex items-center gap-2 p-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md transition-all hover:bg-surface-container-high" onclick="selectPayMethod(this, 'CASH')" type="button">
+<span class="material-symbols-outlined text-[18px]">attach_money</span>
+<span>Cash Desk</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Final Settlement CTA Buttons -->
+<div class="space-y-space-xs pt-space-md">
+<button class="w-full h-10 bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg rounded-lg shadow-sm flex items-center justify-center gap-2 transition-all" id="dischargeBtn" onclick="processPaymentAndDischarge()">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Settle Balance &amp; Grant Clearance</span>
+</button>
+<button class="w-full h-9 bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md rounded-lg flex items-center justify-center gap-2 transition-colors" onclick="generatePdfToast()">
+<span class="material-symbols-outlined text-[16px]">print</span>
+<span>Generate Official Invoice PDF</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Notification Toast Container for Interactions -->
+<div class="fixed bottom-6 right-6 max-w-md bg-surface-container-lowest text-on-surface rounded-xl p-space-md shadow-xl transition-all duration-300 transform translate-y-24 opacity-0 pointer-events-none z-50 flex items-center gap-space-sm" id="toastNotification">
+<div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center text-secondary" id="toastIconContainer">
+<span class="material-symbols-outlined text-[20px]" id="toastIcon">check_circle</span>
+</div>
+<div class="flex flex-col flex-1">
+<span class="font-label-md text-label-md font-semibold text-on-surface" id="toastTitle">Action Success</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant" id="toastMessage">Prescription filled and sent to hospital billing ledger.</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="dismissToast()">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+<script>
+  // Tab Switching between Pharmacy and Billing
+  function switchMainTab(tab) {
+    const rxTabBtn = document.getElementById('viewTabRx');
+    const billTabBtn = document.getElementById('viewTabBill');
+    const sectionRx = document.getElementById('sectionPharmacy');
+    const sectionBill = document.getElementById('sectionBilling');
+
+    if (tab === 'dispensary') {
+      rxTabBtn.className = 'px-space-md py-1 rounded font-label-md text-label-md bg-primary text-on-primary shadow-sm transition-all flex items-center gap-1.5';
+      billTabBtn.className = 'px-space-md py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-1.5';
+      sectionRx.classList.remove('hidden');
+      sectionBill.classList.remove('hidden');
+      sectionRx.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      billTabBtn.className = 'px-space-md py-1 rounded font-label-md text-label-md bg-primary text-on-primary shadow-sm transition-all flex items-center gap-1.5';
+      rxTabBtn.className = 'px-space-md py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-1.5';
+      sectionBill.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  // Filter Formulary Table by Therapeutic Class
+  function filterFormulary(category, btnElement) {
+    const filterBtns = document.querySelectorAll('.rx-filter-btn');
+    filterBtns.forEach(btn => {
+      btn.className = 'rx-filter-btn px-2.5 py-1 rounded text-label-sm font-label-sm bg-surface-container-high text-on-surface hover:bg-surface-container-highest';
+    });
+    btnElement.className = 'rx-filter-btn px-2.5 py-1 rounded text-label-sm font-label-sm bg-primary text-on-primary';
+
+    const rows = document.querySelectorAll('#dispensaryTableBody tr');
+    rows.forEach(row => {
+      const rowCat = row.getAttribute('data-category');
+      if (category === 'ALL' || rowCat === category) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    });
+  }
+
+  // Search Rx Queue
+  function searchRxQueue() {
+    const query = document.getElementById('rxSearchInput').value.toLowerCase();
+    const rows = document.querySelectorAll('#dispensaryTableBody tr');
+    rows.forEach(row => {
+      const text = row.innerText.toLowerCase();
+      row.style.display = text.includes(query) ? '' : 'none';
+    });
+  }
+
+  // Dispense & Bill Order
+  function markFulfilled(button, rxId, amount) {
+    button.disabled = true;
+    button.innerHTML = '<span class="material-symbols-outlined text-[14px]">done_all</span><span>Fulfilled</span>';
+    button.className = 'h-8 px-space-sm bg-surface-container text-on-surface font-label-sm text-label-sm rounded inline-flex items-center gap-1 cursor-default opacity-80';
+
+    const statusTd = button.closest('tr').querySelector('td:nth-child(7) span');
+    if (statusTd) {
+      statusTd.textContent = 'Dispensed & Billed';
+      statusTd.className = 'px-2 py-0.5 rounded-full text-label-sm font-label-sm bg-surface-container text-on-surface';
+    }
+
+    triggerToast('Prescription Fulfilled', `${rxId} billed ($${amount.toFixed(2)}) to central patient ledger.`);
+  }
+
+  // Payment Method Selection
+  function selectPayMethod(btn, method) {
+    const btns = document.querySelectorAll('.pay-method-btn');
+    btns.forEach(b => {
+      b.className = 'pay-method-btn flex items-center gap-2 p-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md transition-all hover:bg-surface-container-high';
+    });
+    btn.className = 'pay-method-btn flex items-center gap-2 p-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md transition-all';
+  }
+
+  // Patient Select Simulator
+  function reloadInvoiceData(patientKey) {
+    const nameElem = document.getElementById('invPatientName');
+    const mrnElem = document.getElementById('invPatientMRN');
+    const copayElem = document.getElementById('patientCoPay');
+
+    if (patientKey === 'p1') {
+      nameElem.textContent = 'Arthur Pendelton (62 M)';
+      mrnElem.textContent = 'MRN-449102 • Blood: A+';
+      copayElem.textContent = '$2,297.99';
+    } else if (patientKey === 'p2') {
+      nameElem.textContent = 'Eleanor Vance (34 F)';
+      mrnElem.textContent = 'MRN-880291 • Blood: O+';
+      copayElem.textContent = '$842.50';
+    } else {
+      nameElem.textContent = 'Carlos Mendez (47 M)';
+      mrnElem.textContent = 'MRN-194002 • Blood: B+';
+      copayElem.textContent = '$1,120.00';
+    }
+    triggerToast('Account Swapped', `Loaded billing ledger for ${nameElem.textContent}`);
+  }
+
+  // Process Full Payment
+  function processPaymentAndDischarge() {
+    const btn = document.getElementById('dischargeBtn');
+    btn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span><span>Processing Clearance...</span>';
+    
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">verified</span><span>Account Cleared &bull; Discharged</span>';
+      btn.className = 'w-full h-10 bg-primary text-on-primary font-label-lg text-label-lg rounded-lg shadow-sm flex items-center justify-center gap-2';
+      triggerToast('Discharge Clearance Granted', 'Financial holds lifted. Discharge summary transmitted to Nurse Station.');
+    }, 900);
+  }
+
+  // PDF Generator Toast
+  function generatePdfToast() {
+    triggerToast('Exporting PDF', 'MedCore Signed Invoice #INV-2024-8849 generated.');
+  }
+
+  // Sync animation
+  function simulateDbSync() {
+    const icon = document.getElementById('syncIcon');
+    icon.classList.add('animate-spin');
+    setTimeout(() => {
+      icon.classList.remove('animate-spin');
+      triggerToast('Ledger Synchronized', 'Real-time sync complete: 0 unposted transactions found.');
+    }, 800);
+  }
+
+  // Toast System
+  let toastTimer;
+  function triggerToast(title, message) {
+    clearTimeout(toastTimer);
+    const toast = document.getElementById('toastNotification');
+    document.getElementById('toastTitle').innerText = title;
+    document.getElementById('toastMessage').innerText = message;
+
+    toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+    toastTimer = setTimeout(() => {
+      dismissToast();
+    }, 4000);
+  }
+
+  function dismissToast() {
+    const toast = document.getElementById('toastNotification');
+    toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+  }
+</script></main></div></body></html>
