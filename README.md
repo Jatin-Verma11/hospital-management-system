@@ -66,3 +66,11 @@ Open your browser at **`http://localhost:3000`** to interact with the applicatio
 - **Database**: SQLite 3 (PRAGMA foreign_keys = ON)
 - **Backend**: Node.js, Express, `sqlite3`
 - **Frontend**: React 19, Vite, Lucide Icons, Custom Glassmorphic CSS System
+
+---
+
+## 🌐 Live Demo
+
+👉 **[Click here to view the live working website](https://jatin-verma11.github.io/hospital-management-system/)**
+
+> The live demo runs entirely in your browser using an in-browser SQLite WebAssembly engine — no backend server required. All CRUD operations, triggers, views, and SQL console work locally in your browser.
