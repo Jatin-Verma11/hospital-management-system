@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary":"#000000","on-primary-fixed":"#131b2e","outline-variant":"#c6c6cd","error-container":"#ffdad6","surface-tint":"#565e74","surface-container-high":"#dce9ff","inverse-on-surface":"#eaf1ff","inverse-primary":"#bec6e0","surface-container-highest":"#d3e4fe","on-primary-container":"#7c839b","on-secondary-container":"#00476e","inverse-surface":"#213145","primary-fixed":"#dae2fd","secondary-fixed-dim":"#93ccff","on-secondary":"#ffffff","on-tertiary-container":"#0c9488","surface-container":"#e5eeff","on-background":"#0b1c30","error":"#ba1a1a","tertiary-fixed-dim":"#6bd8cb","secondary-fixed":"#cce5ff","background":"#f8f9ff","surface-variant":"#d3e4fe","secondary-container":"#5bb8fe","on-secondary-fixed-variant":"#004b73","surface-dim":"#cbdbf5","tertiary-container":"#00201d","secondary":"#006398","on-tertiary-fixed":"#00201d","on-primary-fixed-variant":"#3f465c","on-surface-variant":"#45464d","on-tertiary-fixed-variant":"#005049","on-surface":"#0b1c30","on-error":"#ffffff","tertiary-fixed":"#89f5e7","on-tertiary":"#ffffff","surface-container-low":"#eff4ff","on-primary":"#ffffff","surface-bright":"#f8f9ff","on-secondary-fixed":"#001d31","tertiary":"#000000","primary-container":"#131b2e","surface":"#f8f9ff","on-error-container":"#93000a","primary-fixed-dim":"#bec6e0","outline":"#76777d","surface-container-lowest":"#ffffff"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"margin":"1rem","space-sm":"0.5rem","space-lg":"1.25rem","margin-desktop":"2rem","gutter-desktop":"1.5rem","gutter":"1rem","space-xs":"0.25rem","space-xl":"2rem","space-md":"0.75rem"},"fontFamily":{"label-lg":["Inter"],"headline-lg":["Inter"],"body-md":["Inter"],"body-lg":["Inter"],"label-md":["Inter"],"headline-md":["Inter"],"label-sm":["Inter"],"data-mono":["Inter"],"headline-xl-mobile":["Inter"],"headline-sm":["Inter"],"headline-xl":["Inter"],"body-sm":["Inter"]},"fontSize":{"label-lg":["14px",{"lineHeight":"20px","fontWeight":"500"}],"headline-lg":["24px",{"lineHeight":"32px","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"500"}],"headline-md":["20px",{"lineHeight":"28px","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","fontWeight":"600"}],"data-mono":["13px",{"lineHeight":"18px","fontWeight":"500"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","fontWeight":"700"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}],"headline-xl":["36px",{"lineHeight":"44px","fontWeight":"700"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col flex-1 overflow-y-auto"><div class="h-16 px-space-md flex items-center gap-space-sm bg-surface-container-lowest"><img alt="MedCore Hospital Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xod_rEQ6PoN-xRn-UupevmgyW0cyay1dMl2kvp0OibsjFMXEzukh6G55tyoivG-o6-SisuRK0rPIKfsCcWGakDD0WGNw6xe4xSu7DQq-ENv1Ce7k81U5LCILjJ3lChEmF6pz4jzcC3t4fQ2VaqKszlEvn5Ow4Xk4sC5FaDq6TDK5ULl3il75aMwLFPusDdcXuq7ckzRpOhW0HeypXvyXjki_qSF4ySraVJ6kLi8oqfQ69sQA-mPCLZMWc"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-tight">MedCore HMS</span><span class="font-label-sm text-label-sm text-on-surface-variant">Clinical DBMS Portal</span></div></div><div class="px-space-md py-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Clinical Services</span></div><nav class="flex flex-col gap-space-xs px-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="executive-dashboard" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="font-label-lg text-label-lg">Dashboard</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="patients-and-ehr" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">personal_injury</span><span class="font-label-lg text-label-lg">Patients &amp; EHR</span></div><span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-secondary-container font-label-sm text-label-sm">142 Active</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="doctor-and-staff-opd" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">stethoscope</span><span class="font-label-lg text-label-lg">Doctor &amp; OPD</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="bed-and-ward-tracker" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">bed</span><span class="font-label-lg text-label-lg">Ward Tracker</span></div><span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-secondary-container font-label-sm text-label-sm">18 Avail</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="pharmacy-and-billing" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">receipt_long</span><span class="font-label-lg text-label-lg">Pharmacy &amp; Billing</span></div></a></nav><div class="mt-space-md px-space-md py-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">System Administration</span></div><nav class="flex flex-col gap-space-xs px-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm"><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="database-schema-explorer" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">database</span><span class="font-label-lg text-label-lg">Database Schema</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="audit-logs" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">history</span><span class="font-label-lg text-label-lg">Audit Logs</span></div></a><a class="flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="system-settings" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[18px]">settings</span><span class="font-label-lg text-label-lg">Settings</span></div></a></nav></div><div class="p-space-sm bg-surface-container-low"><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">v4.2.0-PG • Host: Primary-01</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-low"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm text-secondary">Code Green: Normal</span><span class="font-label-sm text-label-sm text-on-surface-variant">• Cap: 88%</span></div><div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1 rounded-lg"><span class="material-symbols-outlined text-[16px] text-on-surface-variant">domain</span><span class="font-label-sm text-label-sm text-on-surface font-medium">St. Jude - Main</span></div><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-sm text-[16px] text-on-surface-variant">search</span><input class="pl-8 pr-space-md py-1 h-9 w-64 md:w-80 bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm rounded-lg focus:outline-none focus:ring-1 focus:ring-secondary" placeholder="Search Patient ID, Doctor, Bed #... [Ctrl+K]" type="text"/></div></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-space-xs text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-secondary-container animate-ping"></span><span class="font-label-sm text-label-sm">Shift 1 • 08:00 - 20:00</span></div><button class="relative p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-4 h-4 rounded-full bg-secondary text-on-secondary font-label-sm text-[10px] flex items-center justify-center">3</span></button><div class="flex items-center gap-space-sm pl-space-sm"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-md text-label-md text-on-surface font-semibold">Dr. Sarah Jenkins</span><span class="font-label-sm text-label-sm text-on-surface-variant">Chief Medical Registrar</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 px-gutter-desktop min-h-screen bg-surface"><div class="flex flex-col w-full">
+<div class="flex flex-col gap-space-lg pb-space-xl">
+<!-- Top Action & Realtime Telemetry Header -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pt-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-semibold">Real-Time Sensor &amp; Census Matrix</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-data-mono text-body-sm text-on-surface-variant">SYNC: 12 SEC AGO</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-0.5">Inpatient Ward &amp; Bed Capacity Tracker</h1>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="flex items-center bg-surface-container-low px-space-md py-1.5 rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant mr-1.5">filter_alt</span>
+<select class="bg-transparent font-label-md text-label-md text-on-surface focus:outline-none cursor-pointer" id="acuity-filter">
+<option value="all">All Care Tiers</option>
+<option value="icu">Critical / High Acuity</option>
+<option value="telemetry">Cardiac / Telemetry</option>
+<option value="standard">Standard Inpatient</option>
+</select>
+</div>
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg shadow-sm hover:opacity-90 transition-all" onclick="openDrawer('quick-assign')">
+<span class="material-symbols-outlined text-[18px]">add_box</span>
+<span>Admit to Bed</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-lg text-label-lg shadow-sm hover:bg-surface-container transition-all" onclick="openDrawer('transfer-panel')">
+<span class="material-symbols-outlined text-[18px]">move_up</span>
+<span>Inter-Ward Transfer</span>
+</button>
+</div>
+</div>
+<!-- Overview Metric Cards (Bento Cluster) -->
+<div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-space-md">
+<!-- Total Beds -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Total Licensed Beds</span>
+<div class="w-7 h-7 rounded-lg bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-secondary">domain</span>
+</div>
+</div>
+<div class="mt-space-md flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-on-surface">420</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Capacity Target</span>
+</div>
+<div class="mt-2 w-full bg-surface-container-low h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 100%"></div>
+</div>
+</div>
+<!-- Occupied Beds -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Occupied Census</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-semibold">91.4% Rate</span>
+</div>
+<div class="mt-space-md flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-on-surface">384</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">+6 vs Last Shift</span>
+</div>
+<div class="mt-2 w-full bg-surface-container-low h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 91.4%"></div>
+</div>
+</div>
+<!-- Available Beds -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Available Clean Beds</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-medium">Ready</span>
+</div>
+<div class="mt-space-md flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-secondary">36</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Immediate Reg</span>
+</div>
+<div class="mt-2 w-full bg-surface-container-low h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 8.6%"></div>
+</div>
+</div>
+<!-- ICU Available -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">ICU Critical Surplus</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">Tight Buffer</span>
+</div>
+<div class="mt-space-md flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-error">04</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">of 32 Total</span>
+</div>
+<div class="mt-2 w-full bg-surface-container-low h-1.5 rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 12.5%"></div>
+</div>
+</div>
+<!-- Maintenance / Turnover -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Sanitation Queue</span>
+<div class="w-7 h-7 rounded-lg bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">sanitizer</span>
+</div>
+</div>
+<div class="mt-space-md flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-on-surface">08</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Avg 24m Turn</span>
+</div>
+<div class="mt-2 w-full bg-surface-container-low h-1.5 rounded-full overflow-hidden">
+<div class="bg-surface-tint h-full rounded-full" style="width: 28%"></div>
+</div>
+</div>
+</div>
+<!-- Ward Quick Tab Switcher & Status Legend -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md bg-surface-container-lowest p-space-sm rounded-xl shadow-sm">
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 xl:pb-0" id="ward-tabs">
+<button class="ward-tab px-space-md py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md whitespace-nowrap transition-all shadow-sm" onclick="filterWard('all', this)">
+          All Wards (420)
+        </button>
+<button class="ward-tab px-space-md py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high font-label-md text-label-md whitespace-nowrap transition-all" onclick="filterWard('icu', this)">
+          Intensive Care (ICU)
+        </button>
+<button class="ward-tab px-space-md py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high font-label-md text-label-md whitespace-nowrap transition-all" onclick="filterWard('cardiology', this)">
+          Cardiology 3A
+        </button>
+<button class="ward-tab px-space-md py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high font-label-md text-label-md whitespace-nowrap transition-all" onclick="filterWard('surgical', this)">
+          Surgical Ward 4B
+        </button>
+<button class="ward-tab px-space-md py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high font-label-md text-label-md whitespace-nowrap transition-all" onclick="filterWard('maternity', this)">
+          Maternity 2C
+        </button>
+<button class="ward-tab px-space-md py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high font-label-md text-label-md whitespace-nowrap transition-all" onclick="filterWard('pediatric', this)">
+          Pediatric Unit
+        </button>
+<button class="ward-tab px-space-md py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high font-label-md text-label-md whitespace-nowrap transition-all" onclick="filterWard('emergency', this)">
+          ED Observation
+        </button>
+</div>
+<!-- Live Legend -->
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1 px-space-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-surface-container-high"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Occupied Normal</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-error-container"></span>
+<span class="font-label-sm text-label-sm text-error font-medium">Occupied Critical</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-surface-container"></span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Available</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-surface-variant"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Decontaminating</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-primary-container"></span>
+<span class="font-label-sm text-label-sm text-on-primary-container font-medium">Reserved OR</span>
+</div>
+</div>
+</div>
+<!-- Main Dynamic Workspace: Ward Grid & Realtime Feed -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg">
+<!-- Interactive Bed Matrix (Col 8/12) -->
+<div class="xl:col-span-8 flex flex-col gap-space-md">
+<!-- Section Header Bar inside Grid Area -->
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-secondary">grid_view</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold" id="active-ward-title">Comprehensive Bed Layout: Level 3 &amp; 4</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Click any bed module for patient dossier or swift reassignment</span>
+</div>
+<!-- Bed Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-space-md" id="bed-grid-container">
+<!-- Bed Card 1: Critical ICU Occupied -->
+<div class="bed-card group relative bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md cursor-pointer transition-all duration-200" data-ward="icu" onclick="selectBed({id: 'ICU-01', ward: 'Intensive Care Unit', name: 'Eleanor Vance', mrn: 'MRN-84920', doc: 'Dr. Michael Chen', nurse: 'RN R. Santos', day: '4', status: 'critical', device: 'Ventilator #V-09', spo2: '93%', hr: '118 bpm', allergy: 'Penicillin'})">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">ICU-01</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span> Critical
+                </span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-error">air</span>
+</div>
+<div class="mt-space-sm">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate block">Eleanor Vance</span>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm mt-0.5">
+<span>MRN-84920</span>
+<span>•</span>
+<span>Day 4 Inpatient</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container-low px-space-sm py-1.5 rounded-lg flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase">Respiratory</span>
+<span class="font-data-mono text-body-sm font-semibold text-on-surface">Invasive Vent</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase">Primary RN</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">RN R. Santos</span>
+</div>
+</div>
+</div>
+<!-- Bed Card 2: Occupied Normal Telemetry -->
+<div class="bed-card group relative bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md cursor-pointer transition-all duration-200" data-ward="icu" onclick="selectBed({id: 'ICU-02', ward: 'Intensive Care Unit', name: 'Marcus Brody', mrn: 'MRN-72319', doc: 'Dr. Sarah Jenkins', nurse: 'RN T. Higgins', day: '2', status: 'occupied', device: 'High Flow O2 (4L)', spo2: '98%', hr: '76 bpm', allergy: 'NKDA'})">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">ICU-02</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-semibold">
+                  Occupied
+                </span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-secondary">monitor_heart</span>
+</div>
+<div class="mt-space-sm">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate block">Marcus Brody</span>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm mt-0.5">
+<span>MRN-72319</span>
+<span>•</span>
+<span>Day 2 Inpatient</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container-low px-space-sm py-1.5 rounded-lg flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase">O2 Support</span>
+<span class="font-data-mono text-body-sm font-semibold text-on-surface">Cannula 4L</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase">Primary RN</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">RN T. Higgins</span>
+</div>
+</div>
+</div>
+<!-- Bed Card 3: Vacant & Clean -->
+<div class="bed-card group relative bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md cursor-pointer transition-all duration-200" data-ward="cardiology" onclick="selectBed({id: 'BED 301-A', ward: 'Cardiology Ward 3A', name: 'VACANT / READY', mrn: '--', doc: 'On-Call Hospitalist', nurse: 'Charge Nurse Assignment', day: '0', status: 'available', device: 'Standard Wall Monitored', spo2: '--', hr: '--', allergy: '--'})">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">BED 301-A</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Ready
+                </span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+</div>
+<div class="mt-space-sm flex flex-col justify-center h-14">
+<span class="font-label-lg text-label-lg font-medium text-secondary">Cleaned &amp; Inspected</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cleared by Environmental 18m ago</span>
+</div>
+<div class="mt-space-sm bg-surface-container-high/60 px-space-sm py-1.5 rounded-lg flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-secondary-container font-medium">Standard Telemetry Bay</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">arrow_forward</span>
+</div>
+</div>
+<!-- Bed Card 4: Sanitation in Progress -->
+<div class="bed-card group relative bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md cursor-pointer transition-all duration-200" data-ward="cardiology" onclick="selectBed({id: 'BED 301-B', ward: 'Cardiology Ward 3A', name: 'DECONTAMINATION IN PROGRESS', mrn: '--', doc: '--', nurse: 'EVS Team Alpha', day: '0', status: 'sanitizing', device: 'Deep Clean UV Cycle', spo2: '--', hr: '--', allergy: '--'})">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">BED 301-B</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-variant text-on-surface-variant font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-tint animate-pulse"></span> Cleaning
+                </span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-surface-tint">cleaning_services</span>
+</div>
+<div class="mt-space-sm flex flex-col justify-center h-14">
+<span class="font-label-lg text-label-lg font-medium text-on-surface">Terminal Disinfection</span>
+<span class="font-data-mono text-body-sm text-on-surface-variant">Est. Complete: 14:15 (~12m left)</span>
+</div>
+<div class="mt-space-sm bg-surface-container-low px-space-sm py-1.5 rounded-lg flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Assigned: Tech J. Morales</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">hourglass_top</span>
+</div>
+</div>
+<!-- Bed Card 5: Reserved for OR Transfer -->
+<div class="bed-card group relative bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md cursor-pointer transition-all duration-200" data-ward="surgical" onclick="selectBed({id: 'BED 404-A', ward: 'Surgical Ward 4B', name: 'HOLD: Post-OR Laparoscopy', mrn: 'PENDING OR-3', doc: 'Dr. Aris Thorne', nurse: 'Pending Post-Op Team', day: '0', status: 'reserved', device: 'Epidural Pump &amp; PCA Line Set', spo2: '--', hr: '--', allergy: 'Latex'})">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">BED 404-A</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold">
+                  OR Hold
+                </span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-primary">bookmark</span>
+</div>
+<div class="mt-space-sm flex flex-col justify-center h-14">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate">Incoming: PACU Suite 2</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Patient: Arthur King (Post-Op)</span>
+</div>
+<div class="mt-space-sm bg-surface-container-low px-space-sm py-1.5 rounded-lg flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Arrival Window: 14:30</span>
+<span class="font-data-mono text-label-sm text-secondary">OR-REQ #48</span>
+</div>
+</div>
+<!-- Bed Card 6: Occupied Surgical Standard -->
+<div class="bed-card group relative bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md cursor-pointer transition-all duration-200" data-ward="surgical" onclick="selectBed({id: 'BED 404-B', ward: 'Surgical Ward 4B', name: 'Sophia Chen-Diaz', mrn: 'MRN-66102', doc: 'Dr. Kimberly Vance', nurse: 'RN C. Wu', day: '1', status: 'occupied', device: 'IV Drip + Telemetry', spo2: '99%', hr: '68 bpm', allergy: 'Sulfa Drugs'})">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">BED 404-B</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-semibold">
+                  Occupied
+                </span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-secondary">monitor_heart</span>
+</div>
+<div class="mt-space-sm">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate block">Sophia Chen-Diaz</span>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm mt-0.5">
+<span>MRN-66102</span>
+<span>•</span>
+<span>Day 1 Post-Op</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container-low px-space-sm py-1.5 rounded-lg flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase">Telemetry</span>
+<span class="font-data-mono text-body-sm font-semibold text-on-surface">Normal Sinus</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase">Primary RN</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">RN C. Wu</span>
+</div>
+</div>
+</div>
+<!-- Bed Card 7: Maternity Bed -->
+<div class="bed-card group relative bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md cursor-pointer transition-all duration-200" data-ward="maternity" onclick="selectBed({id: 'MAT-201', ward: 'Maternity Ward 2C', name: 'Jessica Parker', mrn: 'MRN-91104', doc: 'Dr. Rebecca Stone', nurse: 'RN M. Albright', day: '2', status: 'occupied', device: 'Fetal/Maternal Monitored', spo2: '98%', hr: '82 bpm', allergy: 'NKDA'})">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">MAT-201</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-semibold">
+                  Occupied
+                </span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-secondary">pregnant_woman</span>
+</div>
+<div class="mt-space-sm">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate block">Jessica Parker</span>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm mt-0.5">
+<span>MRN-91104</span>
+<span>•</span>
+<span>Day 2 Labor/Recovery</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container-low px-space-sm py-1.5 rounded-lg flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase">Fetal NST</span>
+<span class="font-data-mono text-body-sm font-semibold text-on-surface">Reactive / Normal</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase">Primary RN</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">RN M. Albright</span>
+</div>
+</div>
+</div>
+<!-- Bed Card 8: Pediatric Unit -->
+<div class="bed-card group relative bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md cursor-pointer transition-all duration-200" data-ward="pediatric" onclick="selectBed({id: 'PED-108', ward: 'Pediatric Unit', name: 'Lucas Rivera (5y)', mrn: 'MRN-44211', doc: 'Dr. Emily Watson', nurse: 'RN J. Patel', day: '1', status: 'occupied', device: 'Pediatric Pulse-Ox', spo2: '97%', hr: '105 bpm', allergy: 'Peanuts'})">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">PED-108</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-semibold">
+                  Occupied
+                </span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-secondary">child_care</span>
+</div>
+<div class="mt-space-sm">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate block">Lucas Rivera (5y)</span>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm mt-0.5">
+<span>MRN-44211</span>
+<span>•</span>
+<span>Day 1 Observation</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs bg-surface-container-low px-space-sm py-1.5 rounded-lg flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase">Acuity</span>
+<span class="font-data-mono text-body-sm font-semibold text-on-surface">Stable Bronchiolitis</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase">Primary RN</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">RN J. Patel</span>
+</div>
+</div>
+</div>
+<!-- Bed Card 9: ED Observation Vacant Ready -->
+<div class="bed-card group relative bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md cursor-pointer transition-all duration-200" data-ward="emergency" onclick="selectBed({id: 'ED-OBS-04', ward: 'Emergency Observation', name: 'VACANT / READY', mrn: '--', doc: 'ED Attending On-Shift', nurse: 'RN D. Hayes', day: '0', status: 'available', device: 'Rapid Triage Crash Cart Adjacent', spo2: '--', hr: '--', allergy: '--'})">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">ED-OBS-04</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Ready
+                </span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+</div>
+<div class="mt-space-sm flex flex-col justify-center h-14">
+<span class="font-label-lg text-label-lg font-medium text-secondary">Open ED Rapid Bay</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Equipped with suction &amp; O2 point</span>
+</div>
+<div class="mt-space-sm bg-surface-container-high/60 px-space-sm py-1.5 rounded-lg flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-secondary-container font-medium">Direct ED Influx Priority</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Floor Visual Architecture & Occupancy Bar Meter -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm mt-space-sm">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Wing Census Distribution</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Live telemetry aggregated across building North &amp; South towers</span>
+</div>
+<span class="font-data-mono text-label-sm text-secondary font-semibold">CENSUS: 384/420</span>
+</div>
+<!-- Stacked Capacity Meter -->
+<div class="h-4 w-full bg-surface-container-low rounded-lg overflow-hidden flex shadow-inner mt-space-xs">
+<div class="bg-error h-full" style="width: 7.5%" title="Critical ICU (32 beds)"></div>
+<div class="bg-secondary h-full" style="width: 58%" title="Standard Occupied (244 beds)"></div>
+<div class="bg-secondary-container h-full" style="width: 25.8%" title="Telemetry &amp; Special Units (108 beds)"></div>
+<div class="bg-surface-tint h-full" style="width: 1.9%" title="Sanitizing (8 beds)"></div>
+<div class="bg-surface-container h-full flex-1" title="Vacant (36 beds)"></div>
+</div>
+<!-- Distribution Legend Details -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-sm mt-space-md pt-space-xs">
+<div class="flex flex-col">
+<span class="font-label-sm text-[11px] text-on-surface-variant">ICU WING (N-4)</span>
+<span class="font-headline-sm text-headline-sm text-error">28 / 32 <span class="text-body-sm font-normal text-on-surface-variant">(87%)</span></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-[11px] text-on-surface-variant">SURGICAL 4B</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">62 / 64 <span class="text-body-sm font-normal text-on-surface-variant">(97%)</span></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-[11px] text-on-surface-variant">CARDIOLOGY 3A</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">78 / 80 <span class="text-body-sm font-normal text-on-surface-variant">(97%)</span></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-[11px] text-on-surface-variant">MATERNITY 2C</span>
+<span class="font-headline-sm text-headline-sm text-secondary">38 / 45 <span class="text-body-sm font-normal text-on-surface-variant">(84%)</span></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Real-Time Activity & Sanitation Feed (Col 4/12) -->
+<div class="xl:col-span-4 flex flex-col gap-space-md">
+<!-- Quick Selected Bed Inspector Mini-Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm" id="inspector-card">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Active Bed Focus</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold" id="inspect-badge">ICU-01 Critical</span>
+</div>
+<div class="flex items-start justify-between mt-1">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface" id="inspect-bed-id">ICU-01</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant" id="inspect-ward-name">Intensive Care Unit</p>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold" id="inspect-patient-name">Eleanor Vance</span>
+<p class="font-data-mono text-body-sm text-on-surface-variant" id="inspect-mrn">MRN-84920</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-2 bg-surface-container-low p-space-sm rounded-lg">
+<div>
+<span class="font-label-sm text-[11px] text-on-surface-variant block">ATTENDING PHYSICIAN</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold" id="inspect-doc">Dr. Michael Chen</span>
+</div>
+<div>
+<span class="font-label-sm text-[11px] text-on-surface-variant block">PRIMARY NURSE</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold" id="inspect-nurse">RN R. Santos</span>
+</div>
+<div>
+<span class="font-label-sm text-[11px] text-on-surface-variant block">VITALS / HARDWARE</span>
+<span class="font-data-mono text-body-sm text-on-surface font-medium" id="inspect-device">Ventilator #V-09</span>
+</div>
+<div>
+<span class="font-label-sm text-[11px] text-on-surface-variant block">ALLERGIES</span>
+<span class="font-label-md text-label-md text-error font-semibold" id="inspect-allergy">Penicillin</span>
+</div>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<button class="flex-1 py-1.5 px-space-sm rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-sm hover:opacity-90 transition-all flex items-center justify-center gap-1" onclick="openDrawer('transfer-panel')">
+<span class="material-symbols-outlined text-[16px]">sync_alt</span>
+<span>Initiate Transfer</span>
+</button>
+<button class="py-1.5 px-space-sm rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-container transition-all flex items-center justify-center gap-1" onclick="flagDischarge()">
+<span class="material-symbols-outlined text-[16px]">logout</span>
+<span>Discharge</span>
+</button>
+</div>
+</div>
+<!-- Sanitation Turnover Pipeline Tracker -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary">sanitizer</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Sanitation Queue</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm">8 In Progress</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Turnover requests automatically routed to Environmental Services (EVS).</p>
+<div class="flex flex-col gap-space-xs mt-1">
+<!-- Sanitation Task 1 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-variant flex items-center justify-center font-data-mono text-body-sm font-bold text-on-surface">
+                  301B
+                </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Cardiology 3A</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">UV Terminal Scrub • Started 13:58</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-data-mono text-body-sm text-secondary font-semibold">~12m rem</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">EVS: Morales</span>
+</div>
+</div>
+<!-- Sanitation Task 2 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-variant flex items-center justify-center font-data-mono text-body-sm font-bold text-on-surface">
+                  ICU06
+                </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">ICU Pod B</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Bio-Contamination Sanitization</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-data-mono text-body-sm text-error font-semibold">~24m rem</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant">EVS: Team 4</span>
+</div>
+</div>
+<!-- Sanitation Task 3 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center font-data-mono text-body-sm font-bold text-secondary">
+                  208A
+                </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Maternity 2C</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Final Inspection &amp; Linen Verification</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-data-mono text-body-sm text-on-surface font-semibold">Final Sign</span>
+<button class="px-2 py-0.5 rounded bg-secondary text-on-secondary font-label-sm text-[10px] hover:opacity-90">Release</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Bed Transfer Audit Stream -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">sync_alt</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Live Movement Ledger</span>
+</div>
+<span class="font-data-mono text-label-sm text-on-surface-variant">SHIFT 1</span>
+</div>
+<div class="flex flex-col gap-2 mt-1">
+<div class="text-body-sm text-on-surface-variant flex items-start gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mt-1.5"></span>
+<div class="flex-1">
+<span class="font-medium text-on-surface">Patient Harold Kim</span> transferred from <span class="font-medium text-on-surface">ED-OBS-01</span> to <span class="font-medium text-on-surface">ICU-03</span>.
+                <div class="font-data-mono text-[11px] text-on-surface-variant mt-0.5">Auth: Dr. J. Martinez • 13:42</div>
+</div>
+</div>
+<div class="text-body-sm text-on-surface-variant flex items-start gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-tint mt-1.5"></span>
+<div class="flex-1">
+<span class="font-medium text-on-surface">Bed 301-B</span> vacated by <span class="font-medium text-on-surface">Maria Rossi</span> (Discharged). EVS ticket created.
+                <div class="font-data-mono text-[11px] text-on-surface-variant mt-0.5">Automated Discharge Hook • 13:55</div>
+</div>
+</div>
+<div class="text-body-sm text-on-surface-variant flex items-start gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container mt-1.5"></span>
+<div class="flex-1">
+<span class="font-medium text-on-surface">OR-Suite 3</span> reserved <span class="font-medium text-on-surface">Bed 404-A</span> for upcoming surgical handoff.
+                <div class="font-data-mono text-[11px] text-on-surface-variant mt-0.5">Auth: Surgical Registrar • 14:02</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Slide-Out Drawer / Modal Panel (For Bed Transfers & Admissions) -->
+<div class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300 opacity-0" id="action-drawer">
+<!-- Scrim Backdrop -->
+<div class="absolute inset-0 bg-primary/40 backdrop-blur-sm transition-opacity" id="drawer-scrim" onclick="closeDrawer()"></div>
+<!-- Drawer Panel Body -->
+<div class="absolute right-0 top-0 h-full w-full max-w-lg bg-surface-container-lowest shadow-2xl p-space-lg flex flex-col justify-between transform translate-x-full transition-transform duration-300 pointer-events-auto overflow-y-auto" id="drawer-content">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[24px] text-secondary">transfer_within_a_station</span>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold" id="drawer-heading">Inter-Ward Bed Transfer</h2>
+</div>
+<button class="p-1 rounded-lg hover:bg-surface-container-high text-on-surface-variant transition-colors" onclick="closeDrawer()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Submit electronic bed relocation authorization. Hospital clinical database updates destination HL7 feed and alerts destination ward charge nurse immediately.
+        </p>
+<!-- Form Elements -->
+<div class="flex flex-col gap-space-sm mt-space-xs">
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-medium mb-1">Target Patient / Current Bed</label>
+<select class="w-full bg-surface-container-low px-space-md py-2 rounded-lg text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-secondary cursor-pointer" id="transfer-patient-select">
+<option value="ICU-01">ICU-01 — Eleanor Vance (MRN-84920)</option>
+<option value="ICU-02">ICU-02 — Marcus Brody (MRN-72319)</option>
+<option value="BED 404-B">BED 404-B — Sophia Chen-Diaz (MRN-66102)</option>
+<option value="MAT-201">MAT-201 — Jessica Parker (MRN-91104)</option>
+<option value="PED-108">PED-108 — Lucas Rivera (MRN-44211)</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-medium mb-1">Target Ward Unit</label>
+<select class="w-full bg-surface-container-low px-space-md py-2 rounded-lg text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-secondary cursor-pointer" id="target-ward">
+<option>Cardiology Ward 3A</option>
+<option>Surgical Ward 4B</option>
+<option>Intensive Care (ICU Step-down)</option>
+<option>Maternity Ward 2C</option>
+<option>Isolation Pod 1 (Negative Air)</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-medium mb-1">Assigned Bed Slot</label>
+<select class="w-full bg-surface-container-low px-space-md py-2 rounded-lg text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-secondary cursor-pointer" id="target-bed-slot">
+<option>BED 301-A (Cleaned &amp; Ready)</option>
+<option>BED 302-B (Telemetry)</option>
+<option>BED 405-A (Standard)</option>
+<option>ED-OBS-04 (Immediate)</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-medium mb-1">Clinical Transfer Justification</label>
+<select class="w-full bg-surface-container-low px-space-md py-2 rounded-lg text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-secondary cursor-pointer">
+<option>Clinical condition improved • ICU Step-down</option>
+<option>Acuity escalation • Immediate ICU monitoring</option>
+<option>Post-Operative Recovery Transfer</option>
+<option>Airborne / Contact Isolation required</option>
+<option>Specialty Service Relocation (Cardio / Neuro)</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-medium mb-1">Attending Physician Authorization Signature</label>
+<div class="flex items-center gap-space-sm">
+<input class="flex-1 bg-surface-container-low px-space-md py-2 rounded-lg text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-secondary font-data-mono" placeholder="Provider ID / SmartKey (e.g. DOC-CHEN-881)" type="text" value="DOC-MCHEN-881"/>
+<button class="px-space-md py-2 bg-surface-container text-secondary font-label-sm text-label-sm rounded-lg font-semibold" type="button">Verify</button>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface font-medium mb-1">Transport Requirements</label>
+<div class="grid grid-cols-2 gap-2 mt-1">
+<label class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low cursor-pointer">
+<input checked="" class="rounded border-none text-primary focus:ring-0" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Portable O2 Bottle</span>
+</label>
+<label class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low cursor-pointer">
+<input checked="" class="rounded border-none text-primary focus:ring-0" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Continuous Telemetry</span>
+</label>
+<label class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low cursor-pointer">
+<input class="rounded border-none text-primary focus:ring-0" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Isolation Precautions</span>
+</label>
+<label class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-low cursor-pointer">
+<input class="rounded border-none text-primary focus:ring-0" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">RN Escort Required</span>
+</label>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center gap-space-xs text-on-secondary-container">
+<span class="material-symbols-outlined text-[20px] text-secondary">verified_user</span>
+<span class="font-body-sm text-body-sm">HL7 Engine will automatically update Bed Board &amp; dispatch Transport Order #TR-993.</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-space-md">
+<button class="flex-1 py-2 px-space-md rounded-lg bg-surface-container-low text-on-surface font-label-lg text-label-lg hover:bg-surface-container transition-all" onclick="closeDrawer()">
+          Cancel
+        </button>
+<button class="flex-1 py-2 px-space-md rounded-lg bg-primary text-on-primary font-label-lg text-label-lg shadow-sm hover:opacity-90 transition-all flex items-center justify-center gap-1" onclick="submitTransfer()">
+<span class="material-symbols-outlined text-[18px]">check</span>
+<span>Execute Transfer</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Notification Toast Container -->
+<div class="fixed bottom-6 right-6 z-50 bg-primary text-on-primary px-space-md py- space-sm rounded-lg shadow-xl font-label-md text-label-md flex items-center gap-2 transform translate-y-16 opacity-0 transition-all duration-300 pointer-events-none" id="toast-message">
+<span class="material-symbols-outlined text-[18px] text-secondary-container">info</span>
+<span id="toast-text">Bed transfer executed successfully.</span>
+</div>
+<!-- Vanilla Client-Side Interactive Engine -->
+<script>
+    function filterWard(wardKey, buttonElement) {
+      // Update Tab Styles
+      const allTabs = document.querySelectorAll('.ward-tab');
+      allTabs.forEach(tab => {
+        tab.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+        tab.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+      });
+
+      buttonElement.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+      buttonElement.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+
+      // Update Title
+      const title = document.getElementById('active-ward-title');
+      const cards = document.querySelectorAll('.bed-card');
+
+      if (wardKey === 'all') {
+        title.innerText = "Comprehensive Bed Layout: Level 3 & 4";
+        cards.forEach(c => c.style.display = 'block');
+      } else {
+        const nameMap = {
+          'icu': 'Intensive Care Unit (ICU) Wing',
+          'cardiology': 'Cardiology Care Ward 3A',
+          'surgical': 'Post-Op Surgical Ward 4B',
+          'maternity': 'Maternity & Neonatal Ward 2C',
+          'pediatric': 'Pediatric Observation Unit',
+          'emergency': 'Emergency Short-Stay Observation'
+        };
+        title.innerText = nameMap[wardKey] || "Ward Bed Matrix";
+        cards.forEach(c => {
+          if (c.getAttribute('data-ward') === wardKey) {
+            c.style.display = 'block';
+          } else {
+            c.style.display = 'none';
+          }
+        });
+      }
+    }
+
+    function selectBed(bed) {
+      document.getElementById('inspect-bed-id').innerText = bed.id;
+      document.getElementById('inspect-ward-name').innerText = bed.ward;
+      document.getElementById('inspect-patient-name').innerText = bed.name;
+      document.getElementById('inspect-mrn').innerText = bed.mrn;
+      document.getElementById('inspect-doc').innerText = bed.doc;
+      document.getElementById('inspect-nurse').innerText = bed.nurse;
+      document.getElementById('inspect-device').innerText = bed.device;
+      document.getElementById('inspect-allergy').innerText = bed.allergy;
+
+      const badge = document.getElementById('inspect-badge');
+      if (bed.status === 'critical') {
+        badge.className = 'px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold';
+        badge.innerText = bed.id + ' Critical';
+      } else if (bed.status === 'available') {
+        badge.className = 'px-2 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-bold';
+        badge.innerText = bed.id + ' Ready';
+      } else if (bed.status === 'sanitizing') {
+        badge.className = 'px-2 py-0.5 rounded-full bg-surface-variant text-on-surface-variant font-label-sm text-label-sm font-bold';
+        badge.innerText = bed.id + ' Cleaning';
+      } else {
+        badge.className = 'px-2 py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-bold';
+        badge.innerText = bed.id + ' Occupied';
+      }
+
+      // Smooth scroll to inspector on small viewports
+      if (window.innerWidth < 1280) {
+        document.getElementById('inspector-card').scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function openDrawer(mode) {
+      const drawer = document.getElementById('action-drawer');
+      const content = document.getElementById('drawer-content');
+      const heading = document.getElementById('drawer-heading');
+
+      if (mode === 'quick-assign') {
+        heading.innerText = 'Rapid Patient Bed Admission';
+      } else {
+        heading.innerText = 'Inter-Ward Bed Relocation';
+      }
+
+      drawer.classList.remove('pointer-events-none', 'opacity-0');
+      drawer.classList.add('opacity-100');
+      content.classList.remove('translate-x-full');
+    }
+
+    function closeDrawer() {
+      const drawer = document.getElementById('action-drawer');
+      const content = document.getElementById('drawer-content');
+
+      content.classList.add('translate-x-full');
+      drawer.classList.remove('opacity-100');
+      drawer.classList.add('opacity-0');
+      setTimeout(() => {
+        drawer.classList.add('pointer-events-none');
+      }, 300);
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast-message');
+      const text = document.getElementById('toast-text');
+      text.innerText = message;
+      toast.classList.remove('translate-y-16', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-16', 'opacity-0', 'pointer-events-none');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 3500);
+    }
+
+    function submitTransfer() {
+      closeDrawer();
+      showToast('Transfer protocol authorized. Transport dispatch notified.');
+    }
+
+    function flagDischarge() {
+      showToast('Discharge process initiated. Environmental sanitation ticket generated.');
+    }
+
+    // Acuity Filter Listener
+    document.getElementById('acuity-filter')?.addEventListener('change', function(e) {
+      const filter = e.target.value;
+      const cards = document.querySelectorAll('.bed-card');
+      
+      cards.forEach(card => {
+        if (filter === 'all') {
+          card.style.display = 'block';
+        } else if (filter === 'icu') {
+          card.style.display = card.getAttribute('data-ward') === 'icu' ? 'block' : 'none';
+        } else if (filter === 'telemetry') {
+          card.style.display = card.getAttribute('data-ward') === 'cardiology' ? 'block' : 'none';
+        } else {
+          card.style.display = (card.getAttribute('data-ward') === 'surgical' || card.getAttribute('data-ward') === 'maternity') ? 'block' : 'none';
+        }
+      });
+    });
+  </script>
+</div></main></div><script src="/js/app.js"></script></body></html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>MedCore HMS - Live SQL Query Console & Audit Logs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config={
+      darkMode:"class",
+      theme:{
+        extend:{
+          colors:{
+            "primary":"#000000",
+            "secondary":"#006398",
+            "secondary-container":"#5bb8fe",
+            "on-secondary-container":"#00476e",
+            "surface":"#f8f9ff",
+            "on-surface":"#0b1c30",
+            "on-surface-variant":"#45464d",
+            "surface-container-lowest":"#ffffff",
+            "surface-container-low":"#eff4ff",
+            "surface-container":"#e5eeff",
+            "surface-container-high":"#dce9ff",
+            "error":"#ba1a1a",
+            "error-container":"#ffdad6"
+          },
+          fontFamily:{
+            "body-md":["Inter"],
+            "headline-lg":["Inter"],
+            "headline-sm":["Inter"],
+            "label-md":["Inter"],
+            "data-mono":["JetBrains Mono"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased">
+  <!-- SIDEBAR -->
+  <aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="flex flex-col flex-1 overflow-y-auto">
+      <div class="h-16 px-4 flex items-center gap-2 bg-surface-container-lowest">
+        <span class="material-symbols-outlined text-secondary text-[26px]">local_hospital</span>
+        <div class="flex flex-col">
+          <span class="font-bold text-on-surface leading-tight">MedCore HMS</span>
+          <span class="text-[11px] text-on-surface-variant">Clinical DBMS Portal</span>
+        </div>
+      </div>
+      <div class="px-4 py-2">
+        <span class="text-[11px] text-on-surface-variant uppercase tracking-wider font-semibold">Clinical Services</span>
+      </div>
+      <nav class="flex flex-col gap-1 px-2">
+        <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" data-path="executive-dashboard" href="/">
+          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="text-sm font-medium">Dashboard</span></div>
+        </a>
+        <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" data-path="patients-and-ehr" href="/patients">
+          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">personal_injury</span><span class="text-sm font-medium">Patients & EHR</span></div>
+        </a>
+        <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" data-path="doctor-and-staff-opd" href="/doctors">
+          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">stethoscope</span><span class="text-sm font-medium">Doctor & OPD</span></div>
+        </a>
+        <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" data-path="bed-and-ward-tracker" href="/wards">
+          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">bed</span><span class="text-sm font-medium">Ward Tracker</span></div>
+        </a>
+        <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" data-path="pharmacy-and-billing" href="/billing">
+          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">receipt_long</span><span class="text-sm font-medium">Pharmacy & Billing</span></div>
+        </a>
+      </nav>
+      <div class="mt-4 px-4 py-2">
+        <span class="text-[11px] text-on-surface-variant uppercase tracking-wider font-semibold">System Administration</span>
+      </div>
+      <nav class="flex flex-col gap-1 px-2">
+        <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" data-path="database-schema-explorer" href="/schema">
+          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">database</span><span class="text-sm font-medium">Database Schema</span></div>
+        </a>
+        <a class="flex items-center justify-between px-3 py-2 rounded-lg bg-black text-white font-semibold transition-colors" data-path="audit-logs" href="/sql-console">
+          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">terminal</span><span class="text-sm font-medium">Live SQL & Audits</span></div>
+        </a>
+      </nav>
+    </div>
+    <div class="p-3 bg-surface-container-low text-xs text-on-surface-variant flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+      <span>SQLite 3 • Online Terminal</span>
+    </div>
+  </aside>
+
+  <!-- MAIN VIEWPORT -->
+  <div class="pl-64">
+    <header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-sm z-40 flex items-center justify-between px-6">
+      <div class="flex items-center gap-3">
+        <span class="px-2.5 py-1 rounded-full bg-surface-container-low text-xs font-semibold text-secondary">Interactive SQL Execution Engine</span>
+        <span class="text-sm text-on-surface-variant">• Target: hospital.db</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button onclick="runQuery()" class="px-4 py-1.5 rounded-lg bg-secondary text-white text-xs font-semibold hover:opacity-90 flex items-center gap-1.5 shadow-sm">
+          <span class="material-symbols-outlined text-[16px]">play_arrow</span>
+          <span>Execute Query (Ctrl+Enter)</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="w-full pt-20 px-8 pb-16 min-h-screen bg-surface flex flex-col gap-6">
+      <!-- Title & Template Presets Deck -->
+      <div class="bg-surface-container-lowest border border-surface-container-high rounded-xl p-5 shadow-sm">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="material-symbols-outlined text-secondary">auto_fix_high</span>
+          <h2 class="text-sm font-bold text-on-surface uppercase tracking-wider">DBMS Query Presets (Click to Load):</h2>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button onclick="setQuery(0)" class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-xs font-medium text-on-surface transition-colors">
+            📊 Doctor Workload (vw_doctor_workload)
+          </button>
+          <button onclick="setQuery(1)" class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-xs font-medium text-on-surface transition-colors">
+            🛏️ Bed Occupancy (vw_bed_occupancy)
+          </button>
+          <button onclick="setQuery(2)" class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-xs font-medium text-on-surface transition-colors">
+            💰 Revenue Summary (vw_revenue_summary)
+          </button>
+          <button onclick="setQuery(3)" class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-xs font-medium text-on-surface transition-colors">
+            🔗 4-Table Relational JOIN
+          </button>
+          <button onclick="setQuery(4)" class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-xs font-medium text-on-surface transition-colors">
+            📈 GROUP BY & HAVING Aggregation
+          </button>
+          <button onclick="setQuery(5)" class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-xs font-medium text-on-surface transition-colors">
+            ⚡ Audit Logs Triggered Trail
+          </button>
+        </div>
+      </div>
+
+      <!-- SQL Code Editor Box -->
+      <div class="bg-gray-950 border border-gray-800 rounded-xl overflow-hidden shadow-lg">
+        <div class="bg-gray-900 px-4 py-2.5 flex items-center justify-between border-b border-gray-800 text-xs text-gray-400">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-[16px] text-secondary-container">code</span>
+            <span class="font-mono font-medium">SQL Editor Console</span>
+          </div>
+          <button onclick="clearQuery()" class="text-gray-400 hover:text-white text-xs">Clear</button>
+        </div>
+        <textarea id="sqlInput" class="w-full h-36 bg-gray-950 text-cyan-300 font-mono text-sm p-4 focus:outline-none resize-y leading-relaxed" spellcheck="false">SELECT * FROM vw_doctor_workload;</textarea>
+      </div>
+
+      <!-- Query Output Container -->
+      <div id="outputContainer" class="hidden">
+        <!-- Results rendered here -->
+      </div>
+
+      <!-- Live Audit Trail Log Section -->
+      <div class="bg-surface-container-lowest border border-surface-container-high rounded-xl p-5 shadow-sm">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-amber-500">history</span>
+            <h2 class="text-base font-bold text-on-surface">Live SQLite Database Trigger Audit Trail</h2>
+          </div>
+          <button onclick="loadAuditLogs()" class="px-3 py-1 bg-surface-container-low hover:bg-surface-container text-xs font-semibold text-on-surface rounded-lg">
+            Refresh Logs
+          </button>
+        </div>
+        <div id="auditLogStream" class="flex flex-col gap-2">
+          <!-- Logs loaded dynamically -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="/js/app.js"></script>
+  <script>
+    const presets = [
+      `SELECT * FROM vw_doctor_workload ORDER BY total_appointments DESC;`,
+      `SELECT room_number, ward_unit, room_status, admitted_patient_name, diagnosis FROM vw_bed_occupancy ORDER BY room_status DESC;`,
+      `SELECT * FROM vw_revenue_summary;`,
+      `SELECT \n  p.mrn, p.name AS patient, d.name AS doctor, dept.name AS department, a.appointment_date, a.status\nFROM appointments a\nJOIN patients p ON a.patient_id = p.patient_id\nJOIN doctors d ON a.doctor_id = d.doctor_id\nJOIN departments dept ON d.department_id = dept.department_id\nORDER BY a.appointment_date DESC;`,
+      `SELECT \n  dept.name AS department, COUNT(d.doctor_id) AS total_doctors, ROUND(AVG(d.salary), 2) AS avg_salary\nFROM departments dept\nJOIN doctors d ON dept.department_id = d.department_id\nGROUP BY dept.name\nHAVING COUNT(d.doctor_id) >= 1\nORDER BY avg_salary DESC;`,
+      `SELECT log_id, action, table_name, details, timestamp FROM audit_logs ORDER BY timestamp DESC LIMIT 20;`
+    ];
+
+    function setQuery(index) {
+      document.getElementById('sqlInput').value = presets[index];
+      runQuery();
+    }
+
+    function clearQuery() {
+      document.getElementById('sqlInput').value = '';
+    }
+
+    async function runQuery() {
+      const sql = document.getElementById('sqlInput').value.trim();
+      if (!sql) return;
+
+      const container = document.getElementById('outputContainer');
+      container.classList.remove('hidden');
+      container.innerHTML = '<div class="p-6 bg-surface-container-lowest rounded-xl text-center text-sm text-on-surface-variant shadow-sm">Executing SQL query...</div>';
+
+      try {
+        const res = await fetch('/api/query', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sql })
+        });
+        const data = await res.json();
+
+        if (!data.success) {
+          container.innerHTML = `
+            <div class="bg-red-50 border border-red-200 text-red-900 rounded-xl p-5 shadow-sm">
+              <strong class="block mb-1 text-sm">SQL Syntax / Execution Error:</strong>
+              <pre class="font-mono text-xs whitespace-pre-wrap">${data.error}</pre>
+              <div class="text-[11px] text-red-600 mt-2">Execution latency: ${data.executionTime}</div>
+            </div>
+          `;
+          return;
+        }
+
+        if (data.type === 'MUTATION') {
+          container.innerHTML = `
+            <div class="bg-emerald-50 border border-emerald-200 text-emerald-900 rounded-xl p-5 shadow-sm flex items-center justify-between">
+              <div>
+                <strong class="block text-sm">Execution Succeeded</strong>
+                <span class="text-xs">${data.message}</span>
+              </div>
+              <span class="px-2.5 py-1 bg-emerald-100 text-emerald-800 text-xs font-semibold rounded">${data.executionTime}</span>
+            </div>
+          `;
+          loadAuditLogs();
+          return;
+        }
+
+        const { columns, rows, rowCount, executionTime } = data;
+        container.innerHTML = `
+          <div class="bg-surface-container-lowest border border-surface-container-high rounded-xl overflow-hidden shadow-sm">
+            <div class="p-4 bg-surface-container-low flex items-center justify-between border-b border-surface-container-high">
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded bg-surface-container-high text-xs font-bold font-mono text-secondary">${rowCount} Rows</span>
+                <span class="px-2 py-0.5 rounded bg-surface-container-high text-xs font-mono text-on-surface-variant">${executionTime}</span>
+              </div>
+              <button onclick="exportResultCsv()" class="px-3 py-1 bg-surface-container-lowest hover:bg-surface-container border border-surface-container-high rounded text-xs font-medium flex items-center gap-1 shadow-sm">
+                <span class="material-symbols-outlined text-[14px]">download</span> Export CSV
+              </button>
+            </div>
+            <div class="overflow-x-auto max-h-[400px]">
+              <table class="w-full text-left border-collapse text-xs">
+                <thead>
+                  <tr class="bg-surface-container-low border-b border-surface-container-high text-on-surface-variant font-semibold">
+                    <th class="py-2.5 px-3 w-10 text-center">#</th>
+                    ${columns.map(c => `<th class="py-2.5 px-3 font-mono">${c}</th>`).join('')}
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-surface-container-high">
+                  ${rows.length === 0 ? '<tr><td colspan="100%" class="p-6 text-center text-on-surface-variant font-mono">(0 rows returned)</td></tr>' : rows.map((r, i) => `
+                    <tr class="hover:bg-surface-container-low font-mono">
+                      <td class="py-2 px-3 text-center text-on-surface-variant">${i + 1}</td>
+                      ${columns.map(c => `<td class="py-2 px-3">${r[c] === null ? '<span class="text-red-500 italic">NULL</span>' : r[c]}</td>`).join('')}
+                    </tr>
+                  `).join('')}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        `;
+        window.lastQueryResult = data;
+      } catch (err) {
+        container.innerHTML = `<div class="p-4 bg-red-100 text-red-900 rounded-xl">${err.message}</div>`;
+      }
+    }
+
+    function exportResultCsv() {
+      if (!window.lastQueryResult || !window.lastQueryResult.rows) return;
+      const { columns, rows } = window.lastQueryResult;
+      const headers = columns.join(',');
+      const csvLines = rows.map(r => columns.map(c => `"${r[c] === null ? '' : String(r[c]).replace(/"/g, '""')}"`).join(','));
+      const blob = new Blob([headers + '\n' + csvLines.join('\n')], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `medcore_query_${Date.now()}.csv`;
+      a.click();
+    }
+
+    async function loadAuditLogs() {
+      try {
+        const res = await fetch('/api/audit-logs');
+        const logs = await res.json();
+        const container = document.getElementById('auditLogStream');
+        container.innerHTML = logs.slice(0, 10).map(l => `
+          <div class="p-3 bg-surface-container-low rounded-lg border border-surface-container-high flex items-center justify-between text-xs">
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded font-bold font-mono ${l.action === 'INSERT' ? 'bg-blue-100 text-blue-900' : l.action === 'ADMISSION' ? 'bg-amber-100 text-amber-900' : 'bg-emerald-100 text-emerald-900'}">${l.action}</span>
+              <span class="text-on-surface font-medium">${l.details}</span>
+            </div>
+            <span class="font-mono text-on-surface-variant text-[11px]">${l.timestamp}</span>
+          </div>
+        `).join('');
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    document.getElementById('sqlInput').addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+        e.preventDefault();
+        runQuery();
+      }
+    });
+
+    loadAuditLogs();
+    runQuery();
+  </script>
+</body>
+</html>

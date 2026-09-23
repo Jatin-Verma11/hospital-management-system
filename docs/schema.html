@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>MedCore HMS - Database Schema & ER Visualizer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config={
+      darkMode:"class",
+      theme:{
+        extend:{
+          colors:{
+            "primary":"#000000",
+            "secondary":"#006398",
+            "secondary-container":"#5bb8fe",
+            "on-secondary-container":"#00476e",
+            "surface":"#f8f9ff",
+            "on-surface":"#0b1c30",
+            "on-surface-variant":"#45464d",
+            "surface-container-lowest":"#ffffff",
+            "surface-container-low":"#eff4ff",
+            "surface-container":"#e5eeff",
+            "surface-container-high":"#dce9ff",
+            "error":"#ba1a1a",
+            "error-container":"#ffdad6"
+          },
+          fontFamily:{
+            "body-md":["Inter"],
+            "headline-lg":["Inter"],
+            "headline-sm":["Inter"],
+            "label-md":["Inter"],
+            "data-mono":["JetBrains Mono"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased">
+  <!-- SIDEBAR -->
+  <aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+    <div class="flex flex-col flex-1 overflow-y-auto">
+      <div class="h-16 px-4 flex items-center gap-2 bg-surface-container-lowest">
+        <span class="material-symbols-outlined text-secondary text-[26px]">local_hospital</span>
+        <div class="flex flex-col">
+          <span class="font-bold text-on-surface leading-tight">MedCore HMS</span>
+          <span class="text-[11px] text-on-surface-variant">Clinical DBMS Portal</span>
+        </div>
+      </div>
+      <div class="px-4 py-2">
+        <span class="text-[11px] text-on-surface-variant uppercase tracking-wider font-semibold">Clinical Services</span>
+      </div>
+      <nav class="flex flex-col gap-1 px-2">
+        <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" data-path="executive-dashboard" href="/">
+          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="text-sm font-medium">Dashboard</span></div>
+        </a>
+        <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" data-path="patients-and-ehr" href="/patients">
+          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">personal_injury</span><span class="text-sm font-medium">Patients & EHR</span></div>
+        </a>
+        <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" data-path="doctor-and-staff-opd" href="/doctors">
+          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">stethoscope</span><span class="text-sm font-medium">Doctor & OPD</span></div>
+        </a>
+        <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" data-path="bed-and-ward-tracker" href="/wards">
+          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">bed</span><span class="text-sm font-medium">Ward Tracker</span></div>
+        </a>
+        <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" data-path="pharmacy-and-billing" href="/billing">
+          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">receipt_long</span><span class="text-sm font-medium">Pharmacy & Billing</span></div>
+        </a>
+      </nav>
+      <div class="mt-4 px-4 py-2">
+        <span class="text-[11px] text-on-surface-variant uppercase tracking-wider font-semibold">System Administration</span>
+      </div>
+      <nav class="flex flex-col gap-1 px-2">
+        <a class="flex items-center justify-between px-3 py-2 rounded-lg bg-black text-white font-semibold transition-colors" data-path="database-schema-explorer" href="/schema">
+          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">database</span><span class="text-sm font-medium">Database Schema</span></div>
+        </a>
+        <a class="flex items-center justify-between px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" data-path="audit-logs" href="/sql-console">
+          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">terminal</span><span class="text-sm font-medium">Live SQL & Audits</span></div>
+        </a>
+      </nav>
+    </div>
+    <div class="p-3 bg-surface-container-low text-xs text-on-surface-variant flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+      <span>SQLite 3 • Relational Schema</span>
+    </div>
+  </aside>
+
+  <!-- MAIN VIEWPORT -->
+  <div class="pl-64">
+    <header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-sm z-40 flex items-center justify-between px-6">
+      <div class="flex items-center gap-3">
+        <span class="px-2.5 py-1 rounded-full bg-surface-container-low text-xs font-semibold text-secondary">DBMS Engine: SQLite v3</span>
+        <span class="text-sm text-on-surface-variant">• Enforcing Foreign Keys & Triggers</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <a href="/sql-console" class="px-3 py-1.5 rounded-lg bg-secondary text-white text-xs font-semibold hover:opacity-90 flex items-center gap-1.5 shadow-sm">
+          <span class="material-symbols-outlined text-[16px]">terminal</span>
+          <span>Open SQL Runner</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="w-full pt-20 px-8 pb-16 min-h-screen bg-surface">
+      <!-- Title Header -->
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <h1 class="text-2xl font-bold text-on-surface">Database Schema Architecture</h1>
+          <p class="text-sm text-on-surface-variant mt-0.5">Relational entity diagrams, column constraints, cascade triggers, and materialized views.</p>
+        </div>
+        <div class="flex items-center gap-2 bg-surface-container-low p-1 rounded-lg" id="tabGroup">
+          <button onclick="switchTab('tables')" id="btn-tables" class="px-3 py-1 rounded-md text-xs font-semibold bg-white shadow-sm text-on-surface">Tables (9)</button>
+          <button onclick="switchTab('triggers')" id="btn-triggers" class="px-3 py-1 rounded-md text-xs font-semibold text-on-surface-variant hover:text-on-surface">Triggers (3)</button>
+          <button onclick="switchTab('views')" id="btn-views" class="px-3 py-1 rounded-md text-xs font-semibold text-on-surface-variant hover:text-on-surface">Views (4)</button>
+        </div>
+      </div>
+
+      <!-- TAB 1: TABLES -->
+      <div id="section-tables" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <!-- Tables loaded dynamically -->
+        <div class="p-6 text-center text-on-surface-variant col-span-full">Loading relational schema...</div>
+      </div>
+
+      <!-- TAB 2: TRIGGERS -->
+      <div id="section-triggers" class="hidden flex-col gap-4">
+        <!-- Triggers loaded dynamically -->
+      </div>
+
+      <!-- TAB 3: VIEWS -->
+      <div id="section-views" class="hidden flex-col gap-4">
+        <!-- Views loaded dynamically -->
+      </div>
+    </main>
+  </div>
+
+  <script src="/js/app.js"></script>
+  <script>
+    let schemaData = null;
+
+    async function loadSchema() {
+      try {
+        const res = await fetch('/api/schema');
+        schemaData = await res.json();
+        renderTables(schemaData.tables);
+        renderTriggers(schemaData.triggers);
+        renderViews(schemaData.views);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    function renderTables(tables) {
+      const container = document.getElementById('section-tables');
+      container.innerHTML = tables.map(tbl => `
+        <div class="bg-surface-container-lowest border border-surface-container-high rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
+          <div class="flex items-center justify-between pb-3 border-b border-surface-container-high mb-3">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary text-[20px]">table_chart</span>
+              <strong class="text-base text-on-surface font-mono">${tbl.name}</strong>
+            </div>
+            <span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container text-on-secondary-container">${tbl.rowCount} Rows</span>
+          </div>
+
+          <div class="text-xs text-on-surface-variant uppercase font-semibold mb-2 tracking-wider">Columns:</div>
+          <div class="flex flex-col gap-1.5 mb-4">
+            ${tbl.columns.map(c => `
+              <div class="flex items-center justify-between py-1 px-2 rounded bg-surface-container-low text-xs">
+                <span class="font-mono ${c.isPrimaryKey ? 'text-amber-600 font-bold flex items-center gap-1' : 'text-on-surface font-medium'}">
+                  ${c.isPrimaryKey ? '🔑 ' + c.name : c.name}
+                </span>
+                <span class="font-mono text-secondary text-[11px]">${c.type || 'ANY'}</span>
+              </div>
+            `).join('')}
+          </div>
+
+          ${tbl.foreignKeys.length > 0 ? `
+            <div class="text-xs text-on-surface-variant uppercase font-semibold mb-1 tracking-wider">Foreign Keys (FK):</div>
+            <div class="flex flex-col gap-1">
+              ${tbl.foreignKeys.map(fk => `
+                <div class="p-1.5 rounded bg-blue-50 border border-blue-200 text-[11px] font-mono text-blue-900 flex items-center justify-between">
+                  <span>${fk.from} ➔ ${fk.table}(${fk.to})</span>
+                  <span class="text-[10px] text-blue-700">${fk.onDelete}</span>
+                </div>
+              `).join('')}
+            </div>
+          ` : ''}
+        </div>
+      `).join('');
+    }
+
+    function renderTriggers(triggers) {
+      const container = document.getElementById('section-triggers');
+      container.innerHTML = triggers.map(trg => `
+        <div class="bg-surface-container-lowest border border-surface-container-high rounded-xl p-5 shadow-sm">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-amber-500">bolt</span>
+              <strong class="text-base font-mono text-on-surface">${trg.name}</strong>
+            </div>
+            <span class="px-2.5 py-0.5 rounded bg-amber-100 text-amber-900 text-xs font-semibold">ON ${trg.tbl_name}</span>
+          </div>
+          <p class="text-xs text-on-surface-variant mb-3">Enforces automated database state synchronization upon mutations.</p>
+          <pre class="bg-gray-950 text-amber-400 p-4 rounded-lg text-xs font-mono overflow-x-auto whitespace-pre-wrap">${trg.sql}</pre>
+        </div>
+      `).join('');
+    }
+
+    function renderViews(views) {
+      const container = document.getElementById('section-views');
+      container.innerHTML = views.map(vw => `
+        <div class="bg-surface-container-lowest border border-surface-container-high rounded-xl p-5 shadow-sm">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary">visibility</span>
+              <strong class="text-base font-mono text-on-surface">${vw.name}</strong>
+            </div>
+            <span class="px-2.5 py-0.5 rounded bg-surface-container text-on-secondary-container text-xs font-semibold">Virtual View</span>
+          </div>
+          <pre class="bg-gray-950 text-cyan-400 p-4 rounded-lg text-xs font-mono overflow-x-auto whitespace-pre-wrap">${vw.sql}</pre>
+        </div>
+      `).join('');
+    }
+
+    function switchTab(tab) {
+      ['tables', 'triggers', 'views'].forEach(t => {
+        const sec = document.getElementById('section-' + t);
+        const btn = document.getElementById('btn-' + t);
+        if (t === tab) {
+          sec.classList.remove('hidden');
+          if (t !== 'tables') sec.classList.add('flex');
+          btn.classList.add('bg-white', 'shadow-sm', 'text-on-surface');
+          btn.classList.remove('text-on-surface-variant');
+        } else {
+          sec.classList.add('hidden');
+          sec.classList.remove('flex');
+          btn.classList.remove('bg-white', 'shadow-sm', 'text-on-surface');
+          btn.classList.add('text-on-surface-variant');
+        }
+      });
+    }
+
+    loadSchema();
+  </script>
+</body>
+</html>
